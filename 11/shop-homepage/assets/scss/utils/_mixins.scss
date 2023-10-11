@@ -1,0 +1,54 @@
+@mixin space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@mixin button{
+    padding: 10px 15px;
+    color: $main-color;
+    background-color:rgb(248,249,250);
+    border: 1px solid $main-color;
+    border-radius:10px;
+}
+
+
+@mixin cards-style{
+    h1{
+        padding-bottom:50px;
+    }
+    .card-row{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        .card{
+            border-radius:5px;
+            margin: 25px;
+            border:1px solid $card-bg;
+            .card-img{
+                border-radius:5px;
+                text-align: center;
+                padding: 100px;
+                height: 50%;
+                // width: 100%;
+                background-color:$card-bg;
+            }
+            .card-descr{
+                h2{
+                    text-align: center;
+                    margin: 40px 0 5px 0;
+                }
+                article{
+                    text-align: center;
+                    margin-bottom: 50px;
+                }
+                button{
+                    display: block;
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+#hero{
+    background-color:$main-color;
+    padding:100px 0;
+    h1{
+        text-align: center;
+        padding: 20px 0;
+        color:white;
+    }
+    h2{
+        text-align: center;
+        color:white;
+    }
+}
+
+#cards{
+    margin: 40px 0;
+    @include cards-style
+}
+
