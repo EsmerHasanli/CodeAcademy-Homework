@@ -1,0 +1,637 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: rgb(248, 249, 250);
+}
+
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container-sm,
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1320px;
+  }
+}
+.container-fluid {
+  width: 100%;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.row > * {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+[class|=col] {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .col-sm-1 {
+    width: 8.3333333333%;
+  }
+  .col-sm-2 {
+    width: 16.6666666667%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-4 {
+    width: 33.3333333333%;
+  }
+  .col-sm-5 {
+    width: 41.6666666667%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-7 {
+    width: 58.3333333333%;
+  }
+  .col-sm-8 {
+    width: 66.6666666667%;
+  }
+  .col-sm-9 {
+    width: 75%;
+  }
+  .col-sm-10 {
+    width: 83.3333333333%;
+  }
+  .col-sm-11 {
+    width: 91.6666666667%;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .col-md-1 {
+    width: 8.3333333333%;
+  }
+  .col-md-2 {
+    width: 16.6666666667%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.3333333333%;
+  }
+  .col-md-5 {
+    width: 41.6666666667%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.3333333333%;
+  }
+  .col-md-8 {
+    width: 66.6666666667%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-10 {
+    width: 83.3333333333%;
+  }
+  .col-md-11 {
+    width: 91.6666666667%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .col-lg-1 {
+    width: 8.3333333333%;
+  }
+  .col-lg-2 {
+    width: 16.6666666667%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.3333333333%;
+  }
+  .col-lg-5 {
+    width: 41.6666666667%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.3333333333%;
+  }
+  .col-lg-8 {
+    width: 66.6666666667%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.3333333333%;
+  }
+  .col-lg-11 {
+    width: 91.6666666667%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .col-xl-1 {
+    width: 8.3333333333%;
+  }
+  .col-xl-2 {
+    width: 16.6666666667%;
+  }
+  .col-xl-3 {
+    width: 25%;
+  }
+  .col-xl-4 {
+    width: 33.3333333333%;
+  }
+  .col-xl-5 {
+    width: 41.6666666667%;
+  }
+  .col-xl-6 {
+    width: 50%;
+  }
+  .col-xl-7 {
+    width: 58.3333333333%;
+  }
+  .col-xl-8 {
+    width: 66.6666666667%;
+  }
+  .col-xl-9 {
+    width: 75%;
+  }
+  .col-xl-10 {
+    width: 83.3333333333%;
+  }
+  .col-xl-11 {
+    width: 91.6666666667%;
+  }
+  .col-xl-12 {
+    width: 100%;
+  }
+}
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .col-xxl-1 {
+    width: 8.3333333333%;
+  }
+  .col-xxl-2 {
+    width: 16.6666666667%;
+  }
+  .col-xxl-3 {
+    width: 25%;
+  }
+  .col-xxl-4 {
+    width: 33.3333333333%;
+  }
+  .col-xxl-5 {
+    width: 41.6666666667%;
+  }
+  .col-xxl-6 {
+    width: 50%;
+  }
+  .col-xxl-7 {
+    width: 58.3333333333%;
+  }
+  .col-xxl-8 {
+    width: 66.6666666667%;
+  }
+  .col-xxl-9 {
+    width: 75%;
+  }
+  .col-xxl-10 {
+    width: 83.3333333333%;
+  }
+  .col-xxl-11 {
+    width: 91.6666666667%;
+  }
+  .col-xxl-12 {
+    width: 100%;
+  }
+}
+h1 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  font-size: 97.632px;
+}
+
+h2 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+h3 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+h4 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+p, li, a {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+i {
+  font-family: fontawesome;
+}
+
+article {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/*phone respnsive*/
+/* tablet responsive */
+/* desktop responsive */
+/*tv responsive*/
+button {
+  margin-top: 20px;
+  padding: 13px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: rgba(85, 77, 77, 0.615);
+  border-color: rgba(85, 77, 77, 0.679);
+}
+
+header {
+  padding: 25px 0;
+}
+header .nav-row {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .nav-row .left-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+header .nav-row .left-bar .menu {
+  margin-top: -17px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+header .nav-row .left-bar .menu:hover {
+  background-color: rgba(85, 77, 77, 0.615);
+  border-color: rgba(85, 77, 77, 0.679);
+}
+header .nav-row .center-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+header .nav-row .center-bar img {
+  height: 35px;
+}
+header .nav-row .right-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+header .nav-row .right-bar a {
+  margin-left: 15px;
+  padding: 8px;
+  font-size: 16px;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+header .nav-row .right-bar a:hover {
+  background-color: rgba(85, 77, 77, 0.615);
+  border-color: rgba(85, 77, 77, 0.679);
+}
+
+#hero {
+  width: 100%;
+  padding: 160px;
+  margin-top: -100px;
+  background-image: url(https://coolwallpapers.me/picsup/5401143-porsche-gt3-porsche-cars-hd-behance-4k.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#hero h1 {
+  color: white;
+}
+#hero button {
+  width: 90%;
+}
+
+#info {
+  padding: 50px 0 100px 0;
+}
+#info .info-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#info .info-box {
+  margin-top: 10px;
+  border-radius: 20px;
+  height: 245px;
+  width: 325px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0px 30px 30px 30px;
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#info .info-box:hover {
+  background-size: 110%;
+  -webkit-filter: blur(0.4px);
+          filter: blur(0.4px);
+}
+#info .box-1 {
+  background-image: url(https://assets-v2.porsche.com/us/-/media/Project/PCOM/SharedSite/Banner-Rotation---Archive/Motorsport/2023/2023---KW40---PCNA---Rennsport-Reunion.jpg?rev=-1&extension=webp&w=1800&q=85);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#info .box-2 {
+  background-image: url(https://assets-v2.porsche.com/us/-/media/Project/PCOM/SharedSite/Banner-Rotation---Archive/Cayenne/E3-II/E3-II-Coupe-PHEV/01---E3-II-Coupe-PHEV.jpg?rev=-1&extension=webp&w=1800&q=85);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#info .box-3 {
+  background-image: url(https://assets-v2.porsche.com/us/-/media/Project/PCOM/SharedSite/Banner-Rotation---Archive/PECATL/2023---KW36---PCNA---PECATL.jpg?rev=-1&extension=webp&w=1800&q=85);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#models {
+  padding: 50px;
+}
+#models .models-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#models .models-row h1 {
+  text-align: center;
+  padding: 30px;
+  font-size: 50px;
+}
+#models .models-row .card {
+  margin: 0 auto;
+  margin-top: 40px;
+  position: relative;
+  width: 497.712px;
+  height: 663.6px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#models .models-row .card .card-img {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+#models .models-row .card .card-img img {
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#models .models-row .card .card-header {
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: flex-start;
+          flex-direction: flex-start;
+}
+#models .models-row .card .card-header span {
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  font-size: 40px;
+  padding: 40px;
+}
+#models .models-row .card .card-footer {
+  padding: 40px;
+}
+#models .models-row .card .card-footer h2 {
+  color: white;
+  font-weight: 400;
+  font-size: 26px;
+}
+#models .models-row .card .card-footer article {
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+}
+#models .models-row .card .card-footer button {
+  display: block;
+  width: 100%;
+}
+#models .models-row .card .card-footer .btn-white {
+  background-color: white;
+  color: black;
+}
+#models .models-row .card .card-footer .btn-white:hover {
+  background-color: rgb(189, 187, 187);
+  border-color: rgb(184, 184, 184);
+}/*# sourceMappingURL=main.css.map */

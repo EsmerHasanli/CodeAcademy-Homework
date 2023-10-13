@@ -1,0 +1,144 @@
+#hero{
+    width: 100%;
+    padding: 160px;
+    
+    margin-top: -100px;
+    background-image: url(https://coolwallpapers.me/picsup/5401143-porsche-gt3-porsche-cars-hd-behance-4k.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    h1{
+        color:white
+    }
+
+    button{
+       width: 90%;
+    }
+}
+
+#info{
+    padding: 50px 0 100px 0;
+    .info-row{
+        @include space-between;
+    }
+   .info-box{
+    margin-top: 10px;
+    border-radius:20px;
+    height: 245px;
+    width: 325px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    padding: 0px 30px 30px 30px;
+    color:white;
+    transition: .5s;
+    &:hover{
+        background-size:110%;
+        filter: blur(.4px);
+    }
+   }
+
+   .box-1{
+    background-image:url(https://assets-v2.porsche.com/us/-/media/Project/PCOM/SharedSite/Banner-Rotation---Archive/Motorsport/2023/2023---KW40---PCNA---Rennsport-Reunion.jpg?rev=-1&extension=webp&w=1800&q=85);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+
+   .box-2{
+    background-image:url(https://assets-v2.porsche.com/us/-/media/Project/PCOM/SharedSite/Banner-Rotation---Archive/Cayenne/E3-II/E3-II-Coupe-PHEV/01---E3-II-Coupe-PHEV.jpg?rev=-1&extension=webp&w=1800&q=85);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+
+   .box-3{
+    background-image:url(https://assets-v2.porsche.com/us/-/media/Project/PCOM/SharedSite/Banner-Rotation---Archive/PECATL/2023---KW36---PCNA---PECATL.jpg?rev=-1&extension=webp&w=1800&q=85);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+}
+
+#models{
+    padding: 50px;
+    .models-row{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        h1{
+            text-align: center; 
+            padding: 30px;
+            font-size:50px ;
+        }
+        .card{
+            margin: 0 auto;
+            margin-top: 40px;
+            position: relative;
+            width:497.712px;
+            height: 663.600px;
+            border-radius:10px;
+            overflow: hidden;
+            .card-img{
+                position: absolute;
+                z-index: -2;
+                width: 100%;
+                height: 100%;
+                img{
+                    object-position: center;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .card-header{
+                height: 60%;
+                display: flex;
+                flex-direction: flex-start;
+                span{
+                    font-style: italic;
+                    font-weight: bold;
+                    color:white;
+                    font-size: 40px;
+                    padding: 40px;
+                }
+            }
+
+            .card-footer{
+                padding: 40px;
+                h2{
+                    color:white;
+                    font-weight: 400;
+                    font-size: 26px;
+                }
+                article{
+                    color:white;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+                button{
+                    display: block;
+                    width: 100%;
+                }
+                .btn-white{
+                    background-color:white;
+                    color:black;
+                    &:hover{
+                        background-color:rgb(189, 187, 187);
+                        border-color:rgb(184, 184, 184);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+

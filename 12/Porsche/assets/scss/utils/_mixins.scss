@@ -1,0 +1,21 @@
+@mixin space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin button{
+    margin-top: 20px;
+    padding:13px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color:white;
+    background-color:transparent;
+    border: 2px solid white;
+    border-radius:5px;
+    transition:.3s;
+    &:hover{
+        background-color:rgba(85, 77, 77, 0.615);
+        border-color:rgba(85, 77, 77, 0.679);
+    }
+}
