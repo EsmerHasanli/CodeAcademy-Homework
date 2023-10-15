@@ -3,25 +3,27 @@
 // ! task3
 
 // ! task4
-let numbers = [1,4,2,6,8,2,1,7,7];
-let count = 0;
-for(let i=0 ; i<numbers.length ; i++) {
-    if(numbers[i] === numbers[i]){
-        count++
-    }
+// let numbers = [1,4,2,6,8,2,1,7,7];
+// let count = 0;
+// for(let i=0 ; i<numbers.length ; i++) {
+//     if(numbers[i] === numbers[i]){
+//         count++
+//     }
 
-}
-console.log(count)
+// }
+// console.log(count)
 
 // ! task5
-// let numbers = [1,4,2,6,8,2,1,7,7];
-// let sum
-// let result
-// for(let i=0; i<numbers.lenght; i++ ){
-//     sum += numbers[i] 
-//     result = sum / numbers.lenght
-// } 
-// console.log(result) //? undefiend
+let numbers = [1,4,2,6,8,2,1,7,7];
+let sum=0;
+let result;
+for(let i=0;i<numbers.length;i++){
+    // console.log(numbers[i]);
+    sum += numbers[i] 
+}
+console.log(sum);
+result = sum / numbers.length
+console.log(result) //? undefiend
 
 
 // ! task6
