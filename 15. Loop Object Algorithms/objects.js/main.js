@@ -38,10 +38,10 @@ while(i < num+1){
 
 console.log(employees)
 
-// let avgAge=0
-// for (let i= 0; i<employees.length ; i++){
-//     avgAge += employees.age[i]
-// }
-// alert(`Avarage age: ${avgAge/employees.age.length}`)
+let avgAge=0
+for (let i= 0; i<employees.length ; i++){
+    avgAge += employees.age[i]
+}
+alert(`Avarage age: ${avgAge/employees.age.length}`)
 
 
