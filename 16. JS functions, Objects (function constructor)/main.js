@@ -57,12 +57,12 @@ let total = function(){
 console.log("total profit from this products " + totalProfit);
 
 
-//? let check = this.isDiscounted
-//? let discount = function(){
-//?    for (let i = 0; i < products.length; i++) {
-//?        if(check==true){
-//?             return check
-//?         }
-//?     }
-//? }
-//? console.log(check)
+let check = this.isDiscounted
+let discount = function(){
+   for (let i = 0; i < products.length; i++) {
+       if(check==true){
+            return check
+        }
+    }
+}
+console.log(check)
