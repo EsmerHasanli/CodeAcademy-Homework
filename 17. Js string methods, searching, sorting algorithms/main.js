@@ -121,6 +121,17 @@
 // people.push(human3)
 // people.push(human4)
 // console.log(people)
+
+// function searchByFullName(searchHuman, data) {
+//     searchHuman = searchHuman.toLowerCase();
+//    return data.filter(human => human.getFullName().toLowerCase().includes(searchHuman))
+// }
+
+// let test = prompt("Who are you looking for?").toLowerCase();
+// let result = searchByFullName(test, people);
+
+// console.log("The person you looking for: ")
+// console.log(result);
     
 
 //#endregion

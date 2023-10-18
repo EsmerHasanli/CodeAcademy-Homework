@@ -1,0 +1,45 @@
+/*phone respnsive*/
+@media (max-width: 640px){
+    #desktop-header{
+        display: none;
+    }
+    nav{
+        display: none;
+    }
+}
+
+/* tablet responsive */
+@media only screen and (min-width:640px) and (max-width:768px){
+    #desktop-header{
+        display: none;
+    }
+    nav{
+        display: none;
+    }
+}
+
+/* desktop responsive */
+@media only screen and (min-width:768px) and (max-width:998px){
+    #responsive-header{
+        display: none;
+    }
+}
+
+/*tv responsive*/
+@media only screen and (min-width:998px) and (max-width:1400px){
+    #responsive-header{
+        display: none;
+    }
+    .left-bar{
+        display: none;
+    }
+}
+
+@media only screen and (min-width:1440px){
+    #responsive-header{
+        display: none;
+    }
+}
+
+
+

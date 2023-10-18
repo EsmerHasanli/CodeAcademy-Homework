@@ -1,0 +1,50 @@
+#hero{
+    padding:20px 0;
+    h1{
+        padding: 20px 0;
+    }
+    .hero-row{
+        padding: 50px;
+        border-radius:20px;
+        background-color:$card-bg;
+        @include space-between;
+        .hero-card{
+            img{
+                width: 315px;
+                height: 200px;
+            }
+        }
+        .hero-info{
+            margin-left: 70px;
+            .hero-header{
+                @include space-between;
+                button{
+                    @include button;
+                }
+            }
+            .hero-footer{
+                @include space-between;
+                padding-top: 35px; 
+                .hero-item{
+                    display: flex;
+                    align-items:center;
+                    justify-content: center;
+                    i{
+                        font-size: 35px;
+                        color:$main-color;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#cards{
+    @include cards-style
+}
+
+#others{
+    @include cards-style
+}
+
