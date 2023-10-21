@@ -1,0 +1,181 @@
+header{
+    background-color:rgb(33,37,41);
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+header nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 25px;
+    width: 140px;
+}
+
+header nav ul{
+    display: flex;
+}
+
+header nav .links li{
+    padding: 0 15px;
+}
+
+header nav .links li a{
+    font-size: 15.2px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+header nav .links li:hover a{
+    color:rgb(254,209,54);
+}
+
+header nav .mobile-menu {
+    display: none;
+    padding: 16px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 6px;
+    background-color:rgb(33,37,41) ;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#hero{
+    height: 100vh;
+    background-image: url(../image/header-bg.jpg);
+    background-size: cover;
+    padding-top:17rem;
+    padding-bottom: 13rem;
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+
+#hero h1{
+    font-family: "Roboto Slab";
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+#hero h2{
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 64px;
+}
+
+#hero .btn button{
+    background-color:rgb(255,200,0);
+    color:rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#hero .btn button:hover{
+    filter: brightness(0.8);
+}
+
+#services{
+    width: 100%;
+    height: 85vh;
+    padding: 6rem 0;
+}
+
+.services-row{
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#services h2{
+    color: rgb(33, 37, 41);
+    font-weight: 400;
+    text-align: center;
+    font-size: 2.5rem;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#services h2~p{
+    color: rgb(108, 117, 125);
+    font-family: "Roboto Slab";
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 96px;
+}
+
+#services .services-item .service-logo{
+    height: 130px ;
+    width:130px;
+    border-radius:50%;
+    background-color:rgb(255,200,0);
+    margin: 0 auto;
+    position: relative;
+}
+
+#services .services-item .service-logo i{
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 45px);
+    color: rgb(255, 255, 255);
+    font-size: 70px;
+}
+
+#services .services-item .service-descr h3{
+    margin:1rem 0;
+    color: rgb(33, 37, 41);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#services .services-item .service-descr p{
+    color: rgb(108, 117, 125);
+    font-family: "Roboto Slab";
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 12px;
+}
+
+
+
+
+@media only screen and (max-width: 992px) {
+    header nav .mobile-menu{
+        display: block;
+    }
+
+    header nav .links{
+        display: none;
+    }
+
+    #hero h1{
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+    
+    #hero h2{
+        font-size: 55px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+}

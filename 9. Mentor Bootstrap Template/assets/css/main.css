@@ -1,0 +1,995 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*phone respnsive*/
+@media (max-width: 640px) {
+  header nav .links ul li {
+    display: none;
+  }
+  header nav .links .btn .menu {
+    display: inline-block;
+  }
+}
+/* tablet responsive */
+@media only screen and (min-width: 640px) and (max-width: 768px) {
+  header nav .links ul li {
+    display: none;
+  }
+  header nav .links .btn .menu {
+    display: inline-block;
+  }
+}
+/* desktop responsive */
+/*tv responsive*/
+.main-links {
+  position: relative;
+}
+.main-links .dropdown {
+  width: 35%;
+  padding-right: 20px;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 30px;
+  display: none;
+}
+.main-links .dropdown li {
+  padding: 5px 10px 0px 0px;
+}
+.main-links .dropdown .deep-dropdown {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  left: 242px;
+  top: 30px;
+  width: 75%;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: none;
+}
+
+nav .main-links li:nth-child(7):hover .dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .main-links .dropdown li:nth-child(2):hover .deep-dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header {
+  position: fixed;
+  z-index: 9;
+  background-color: white;
+  width: 100%;
+}
+
+nav {
+  padding: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav .logo a {
+  text-transform: uppercase;
+  color: rgb(95, 207, 128);
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+nav .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav .links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+nav .links ul li {
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+}
+nav .links ul li a {
+  padding: 10px 0 10px 30px;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(55, 66, 59);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+nav .links ul li a:hover {
+  color: rgb(95, 207, 128);
+}
+nav .links .btn button {
+  margin-top: -40px;
+  margin-left: 22px;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(95, 207, 128);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+nav .links .btn button:hover {
+  background-color: rgb(58, 193, 98);
+}
+nav .links .menu {
+  display: none;
+}
+nav .links .menu i {
+  font-size: 24px;
+  padding-left: 15px;
+}
+
+footer {
+  background-color: rgb(249, 250, 249);
+}
+footer .footer-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px 0;
+}
+footer .footer-top h2 {
+  font-family: Raleway, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+footer .footer-top ul {
+  color: #777777;
+  padding-left: 0px;
+  margin-bottom: 20px;
+}
+footer .footer-top p {
+  margin-bottom: 0px;
+  color: #777777;
+}
+footer .footer-links h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444444;
+}
+footer .footer-links ul li a {
+  color: rgb(55, 66, 59);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+footer .footer-links ul li a:hover {
+  color: rgb(95, 207, 128);
+}
+footer .footer-links ul li a i {
+  color: rgb(95, 207, 128);
+  font-size: 9px;
+  padding-right: 5px;
+}
+footer .footer-newsletter h3 {
+  color: rgb(55, 66, 59);
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+footer .footer-newsletter p {
+  color: rgb(55, 66, 59);
+  font-family: Raleway, sans-serif;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+footer .footer-newsletter input {
+  border-color: #eee;
+  border-radius: 30px;
+  background-color: none;
+  width: 300px;
+  line-height: 35px;
+}
+footer .footer-newsletter button {
+  position: absolute;
+  right: 190px;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(95, 207, 128);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+footer .footer-newsletter button:hover {
+  background-color: rgb(58, 193, 98);
+}
+
+footer .bck {
+  width: 100%;
+  padding: 30px 20px;
+  background-color: #eee;
+}
+footer .footer-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .footer-bottom .left-bar p {
+  margin-bottom: 3px;
+  color: rgb(55, 66, 59);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+footer .footer-bottom .left-bar p a {
+  color: rgb(95, 207, 128);
+}
+footer .footer-bottom .right-bar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+footer .footer-bottom .right-bar ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: rgb(95, 207, 128);
+}
+footer .footer-bottom .right-bar ul li:hover {
+  background-color: rgb(58, 193, 98);
+}
+footer .footer-bottom .right-bar ul li i {
+  font-size: 18px;
+  color: white;
+}
+
+footer {
+  position: relative;
+}
+footer .footer-scroll {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(95, 207, 128);
+  position: fixed;
+}
+footer .footer-scroll a {
+  color: white;
+}
+
+#hero {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.05))), url(https://bootstrapmade.com/demo/templates/Mentor/assets/img/hero-bg.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.05)), url(https://bootstrapmade.com/demo/templates/Mentor/assets/img/hero-bg.jpg);
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -2;
+}
+#hero .header {
+  padding-top: 60px;
+}
+#hero .header h1 {
+  padding-top: 80px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+#hero .header h2 {
+  color: #eee;
+  margin: 10px 0 0 0;
+  font-size: 24px;
+}
+#hero .btn {
+  margin-top: 30px;
+  margin-bottom: 120px;
+}
+#hero .btn button {
+  padding: 8px 35px;
+  border: 1px solid white;
+  border-radius: 50px;
+  float: left;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+}
+#hero .btn button:hover {
+  border: 1px solid rgb(95, 207, 128);
+  background-color: rgb(95, 207, 128);
+  cursor: pointer;
+}
+
+#preview {
+  height: 90vh;
+  width: 100%;
+}
+#preview h3 {
+  padding-top: 60px;
+  color: rgb(55, 66, 59);
+  font-size: 26px;
+  font-weight: 600;
+}
+#preview p:first-of-type {
+  font-style: italic;
+}
+#preview ul {
+  padding: 15px 0;
+}
+#preview ul li {
+  padding-top: 10px;
+  color: rgb(55, 66, 59);
+}
+#preview ul li i {
+  color: rgb(95, 207, 128);
+  padding-right: 5px;
+}
+#preview img {
+  padding: 60px;
+  max-width: 100%;
+}
+
+#statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #eee;
+  padding: 15px;
+}
+#statistics span {
+  color: rgb(95, 207, 128);
+  font-size: 48px;
+  font-weight: 700;
+}
+#statistics p {
+  color: rgb(55, 66, 59);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#choose {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 60px 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#choose .box-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#choose .box-wrapper .box {
+  border: 1px solid #eee;
+  margin-left: 10px;
+  height: 350px;
+}
+#choose .box-wrapper .box .box-item {
+  margin: 30px auto;
+  padding-top: 20px;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  background-color: rgb(95, 207, 128);
+  color: white;
+}
+#choose .box-wrapper .box .box-title {
+  padding: 0 20px 20px 20px;
+  text-align: center;
+  color: rgb(55, 66, 59);
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+#choose .box-wrapper .box .box-descr {
+  margin-bottom: 15px;
+  padding: 0 20px 20px 20px;
+  text-align: center;
+  color: rgb(132, 132, 132);
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#choose {
+  padding: 30px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#choose .card {
+  border: none;
+  background-color: rgb(95, 207, 128);
+  color: white;
+}
+#choose .card .card-title {
+  font-family: Raleway, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+#choose .card .card-text {
+  margin-bottom: 30px;
+}
+#choose .card button a {
+  color: white;
+}
+
+#buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+}
+#buttons .button-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #eee;
+  background-color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#buttons .button-wrapper i {
+  color: orange;
+  padding-right: 10px;
+}
+#buttons .button-wrapper a {
+  color: rgb(55, 66, 59);
+}
+#buttons button:hover {
+  border-color: rgb(95, 207, 128);
+}
+#buttons button:hover a {
+  color: rgb(95, 207, 128);
+}
+
+#courses {
+  padding: 50px 0;
+}
+#courses h2 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #eee;
+  font-family: "Poppins", sans-serif;
+}
+#courses h2::after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 120px;
+  margin: 4px 10px;
+  background: rgb(95, 207, 128);
+}
+#courses h3 {
+  color: rgb(55, 66, 59);
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+#courses .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  border-bottom: none;
+  background-color: #fff;
+}
+#courses .card-header p:first-child {
+  padding: 7px 14px;
+  background-color: rgb(95, 207, 128);
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+#courses .card-header p:nth-child(2) {
+  color: rgb(55, 66, 59);
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+#courses .card-title {
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#courses .card-title:hover {
+  color: rgb(95, 207, 128);
+}
+#courses .card-text {
+  color: rgb(55, 66, 59);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#courses .card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#courses .card-footer .card-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#courses .card-footer .card-profile .card-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 10x solid black;
+  background-image: url(https://bootstrapmade.com/demo/templates/Mentor/assets/img/trainers/trainer-1.jpg);
+  background-size: cover;
+}
+#courses .card-footer .card-profile .card-user {
+  padding-left: 10px;
+  color: rgb(55, 66, 59);
+  font-weight: 600;
+  font-size: 16px;
+}
+#courses .card-footer .card-item ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#courses .card-footer .card-item ul li {
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+#mentors {
+  padding: 50px 0;
+}
+#mentors .mentor-card {
+  margin-left: 10px;
+  border: 1px solid #eee;
+  width: 90%;
+}
+#mentors .mentor-card-img {
+  margin: 0px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  width: 100%;
+  height: 420px;
+}
+#mentors .mentor-card-img img {
+  width: 100%;
+  height: 100%;
+}
+#mentors .mentor-card-title {
+  text-align: center;
+  color: rgb(55, 66, 59);
+}
+#mentors .mentor-card-title h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+#mentors .mentor-card-title h3 {
+  font-style: italic;
+  font-size: 13px;
+}
+#mentors .mentor-card-descr {
+  padding: 10px;
+  text-align: center;
+  color: rgb(55, 66, 59);
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+}
+#mentors .mentor-card-links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#mentors .mentor-card-links ul li {
+  text-align: center;
+  padding: 0 10px;
+}
+#mentors .mentor-card-links ul li i {
+  font-size: 18px;
+  color: rgb(55, 66, 59);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#mentors .mentor-card-links ul li i:hover {
+  color: rgb(95, 207, 128);
+}
+
+#events {
+  background-color: rgb(95, 207, 128);
+  padding: 30px;
+}
+#events h1 {
+  margin-top: 73px;
+  text-align: center;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+#events p {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#cours-info {
+  padding: 50px 0;
+  margin-bottom: 50px;
+}
+#cours-info .card {
+  border: none;
+}
+#cours-info .card-img {
+  border-radius: 0%;
+  height: 450px;
+  width: 100%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+#cours-info .card-img img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#cours-info .card-img img:hover {
+  width: 110%;
+  height: 110%;
+}
+#cours-info .card-body {
+  margin: -50px auto;
+  width: 90%;
+  padding: 50px 25px;
+  background-color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+#cours-info .card-body .card-title {
+  text-align: center;
+  color: rgb(55, 66, 59);
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#cours-info .card-body .card-title:hover {
+  color: rgb(95, 207, 128);
+  cursor: pointer;
+}
+#cours-info .card-body .card-subtitle {
+  margin: 8px 0 10px 0;
+  text-align: center;
+  color: rgb(55, 66, 59);
+  font-style: italic;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+#cours-info .card-body .card-descr {
+  color: rgb(94, 94, 94);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#contact {
+  background-color: rgb(95, 207, 128);
+  padding: 30px;
+}
+#contact h1 {
+  margin-top: 73px;
+  text-align: center;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+#contact p {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#map {
+  margin-top: 10px;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+#map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px 0;
+}
+#info .info-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#info i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(236, 249, 240);
+  color: rgb(95, 207, 128);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#info i:hover {
+  background-color: rgb(95, 207, 128);
+  color: white;
+}
+#info h4 {
+  color: rgb(55, 66, 59);
+  font-family: Raleway, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 2px 30px;
+}
+#info p {
+  margin-top: 2px;
+  color: rgb(101, 122, 109);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 2px 30px;
+}
+
+#info .input-name {
+  display: inline-block;
+  width: 48%;
+  margin: 10px auto;
+  margin-right: 25px;
+}
+#info .input-name input {
+  width: 100%;
+  border-color: #eee;
+  border-radius: 5px;
+  height: 40px;
+}
+#info .input-email {
+  display: inline-block;
+  width: 48%;
+  margin: 10px auto;
+}
+#info .input-email input {
+  width: 100%;
+  border-color: #eee;
+  border-radius: 5px;
+  height: 40px;
+}
+#info .input-subject {
+  width: 100%;
+  margin: 10px auto;
+}
+#info .input-subject input {
+  width: 100%;
+  border-color: #eee;
+  border-radius: 5px;
+  height: 40px;
+}
+#info textarea {
+  margin-top: 10px;
+  width: 100%;
+}
+#info button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(95, 207, 128);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#info button:hover {
+  background-color: rgb(58, 193, 98);
+}/*# sourceMappingURL=main.css.map */

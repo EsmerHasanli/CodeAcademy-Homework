@@ -1,0 +1,32 @@
+/*phone respnsive*/
+@media (max-width: 640px){
+    header nav .links ul li{
+        display:none;
+    }
+    header nav .links .btn .menu{
+        display:inline-block;
+    }
+}
+
+/* tablet responsive */
+@media only screen and (min-width:640px) and (max-width:768px){
+    header nav .links ul li{
+        display:none;
+    }
+    header nav .links .btn .menu{
+        display:inline-block;
+    }
+}
+
+/* desktop responsive */
+// @media only screen and (min-width:768px) and (max-width:998px){
+
+// }
+
+/*tv responsive*/
+// @media only screen and (min-width:998px) and (max-width:1400px){
+
+// }
+
+
+

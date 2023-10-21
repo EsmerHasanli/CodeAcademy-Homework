@@ -1,0 +1,44 @@
+.main-links{
+    position:relative;
+    .dropdown{
+        width:35%;
+        padding-right:20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:30px;
+        display: none;
+        li{
+            padding:5px 10px 0px 0px;
+        }
+        .deep-dropdown{
+            position:absolute;
+            display: flex;
+            flex-direction: column;
+            left: 242px;
+            top: 30px;
+            width: 75%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display: none;
+        }
+    }
+}
+
+nav{
+    .main-links{
+        li:nth-child(7):hover .dropdown{
+            display: flex;
+        }
+    }
+}
+
+nav{
+    .main-links{
+        .dropdown{
+            li:nth-child(2):hover .deep-dropdown{
+                display: flex;
+            }
+        }
+    }
+}

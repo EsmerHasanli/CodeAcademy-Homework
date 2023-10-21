@@ -1,0 +1,40 @@
+h1{
+    color: $header-color;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h2{
+    color:$text-color;
+    font-size: 0.875rem;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 1.5rem;
+}
+
+h3{
+    font-weight: 600;
+    color: $subheader-color;
+}
+
+article{
+    padding-top: 1rem;
+    font-weight:300;
+    color:#646478;
+    font-size:0.875rem;
+}
+
+span{
+    color:#FF7A58;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+p{
+    color:$text-color;
+    font-weight:500;
+}
+
