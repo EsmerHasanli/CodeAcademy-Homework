@@ -1,0 +1,40 @@
+.accordion-row{
+    margin: 50px auto;
+    width: 70%;
+    .accordion{
+        border: 1.5px solid lightgrey;
+        &-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            transition: .3s linear;
+            h1{
+                font-size: 20px;
+            }
+        }
+        &-descr{
+            border-top: 1px solid lightgrey;
+            padding:15px;
+            display: none;
+            span{
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.active {
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    background-color:rgba(103, 167, 239, 0.3);
+    color:rgb(3, 102, 214);
+    i{
+        rotate: 180deg;
+    }
+}
+
+
+
+
+  

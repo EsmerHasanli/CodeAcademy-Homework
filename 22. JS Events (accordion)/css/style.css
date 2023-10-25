@@ -1,0 +1,43 @@
+.accordion-row {
+  margin: 50px auto;
+  width: 70%;
+}
+.accordion-row .accordion {
+  border: 1.5px solid lightgrey;
+}
+.accordion-row .accordion-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+.accordion-row .accordion-header h1 {
+  font-size: 20px;
+}
+.accordion-row .accordion-descr {
+  border-top: 1px solid lightgrey;
+  padding: 15px;
+  display: none;
+}
+.accordion-row .accordion-descr span {
+  font-weight: bold;
+}
+
+.active {
+  -webkit-box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+          box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  background-color: rgba(103, 167, 239, 0.3);
+  color: rgb(3, 102, 214);
+}
+.active i {
+  rotate: 180deg;
+}/*# sourceMappingURL=style.css.map */
