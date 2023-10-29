@@ -1,0 +1,31 @@
+header{
+    background-color:rgba(141, 85, 45, 0.733);
+    #navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            img{
+                width: 150px;
+                height: 100px;
+            }
+        }
+        .links{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            a{
+                margin-right: 15px;
+                padding: 5px 10px;
+                font-size: 20px;
+                color: rgb(235, 228, 177);
+                transition: .3s;
+                &:hover{
+                    border-radius: 5px;
+                    background-color: rgba(245, 245, 220, 0.74);
+                    color:brown;
+                }
+            }
+        }
+    }
+}

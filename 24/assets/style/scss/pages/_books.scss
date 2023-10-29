@@ -1,0 +1,111 @@
+body{
+    background-color:rgb(246, 241, 206);
+}
+.sort-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    button{
+        width: 20%;
+        margin-left: 5px;
+        float: right;
+    }
+    select{
+        background-color: rgb(95, 41, 22);
+        color:white;
+        width:30%;
+        margin-left: 10px;
+        float: left;
+    }
+}
+.search-bar{
+    margin: 0 auto;
+    width: 60%;
+}
+.box-wrapper{
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    .box{
+        margin-top: 20px;
+        background-color:white;
+        border-radius:10px;
+        height: 550px;
+        .box-img{
+            border-top-left-radius:10px;
+            border-top-right-radius:10px;
+            overflow: hidden;
+            height:50%;
+            img{
+                height:100%;
+                border-top-left-radius:10px;
+                border-top-right-radius:10px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .box-descr{
+            h5:hover{
+                cursor: pointer;
+            }
+            padding:15px;
+            height:40%;
+        }
+        .box-btn{
+            padding:15px;
+            height: 10%;
+            button{
+                float: inline-end;
+                margin-left: 3px;
+            }
+        }
+    }
+}
+.btn-wrapper{
+    button{
+        padding: 5px 20px;
+        background-color: rgb(95, 41, 22);
+        color:white;
+        border: none;
+        border-radius: 5px;
+        margin: 20px 0;
+        float: right;
+         width:10%;
+        &:hover{
+            background-color: rgb(141, 85, 45);
+        }
+    }
+}
+.modal {
+    display: flex;
+    position: fixed;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.504);
+    width: 100vw;
+    display: none;
+    height: 100vh;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.modal.active {
+    display: flex;
+}
+.modal_wrapper {
+    background-color: white !important;
+    min-width: 510px;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    min-height: 510px;
+    padding: 5px;
+}

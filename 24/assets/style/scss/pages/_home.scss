@@ -1,0 +1,54 @@
+#hero{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    .slider-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        img{
+            object-fit: fill;
+            width:100%;
+            filter: brightness(60%);
+        }
+        #first-img{
+            display: block;
+        }
+        #second-img{
+            display: none;
+        }
+        h1{
+            position: absolute;
+            top: 43%;
+            left: calc(36% + 10px);
+            font-size: 50px;
+            color: white;
+            z-index: 3;
+            text-align: center;
+        }
+        .swipeRight{
+            margin-right:40px ;
+            position: absolute;
+            top: 50%;
+            right:0;
+            background-color: transparent;
+            border: none;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .swipeLeft{
+            margin-left:40px ;
+            position: absolute;
+            top: 50%;
+            left:0;
+            background-color: transparent;
+            border: none;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            z-index: 3;
+        }
+    }
+}

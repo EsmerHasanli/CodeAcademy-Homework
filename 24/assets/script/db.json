@@ -1,0 +1,144 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "Little Women",
+      "pageCount": 449,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "description": "Love is the only thing we can take with us when we leave.",
+      "genre": "Romance"
+    },
+    {
+      "id": 2,
+      "name": "Pride and Prejudice",
+      "pageCount": 279,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg",
+      "author": "Jane Austen",
+      "year": 1813,
+      "description": "A lady's imagination is very rapid.",
+      "genre": "Romance"
+    },
+    {
+      "id": 3,
+      "name": "Jane Eyre",
+      "pageCount": 532,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1557343311i/10210.jpg",
+      "author": "Charlotte Brontë",
+      "year": 1847,
+      "description": "I am a free human being with an independent will.",
+      "genre": "Romance"
+    },
+    {
+      "id": 4,
+      "name": "Emma",
+      "pageCount": 1036,
+      "coverImage": "https://almabooks.com/wp-content/uploads/2016/10/9781847494139.jpg",
+      "author": "Jane Austen",
+      "year": 1815,
+      "description": "I am no bird; and no net ensnares me: I am a free human being with an independent will.",
+      "genre": "Romance"
+    },
+    {
+      "id": 5,
+      "name": "The Silent Patient",
+      "pageCount": 348,
+      "coverImage": "https://m.media-amazon.com/images/I/717Q8dxjBpL._AC_UF1000,1000_QL80_.jpg",
+      "author": "Alex Michaeldies",
+      "year": 2019,
+      "description": "Only she knows what happened. Only he can make her talk.",
+      "genre": "Thriller"
+    },
+    {
+      "id": 6,
+      "name": "Deadly Web",
+      "pageCount": 318,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1464598026i/30310540.jpg",
+      "author": "Mike Omer",
+      "year": 2016,
+      "description": "Killers don’t patiently wait their turn before committing murder.",
+      "genre": "Thriller"
+    },
+    {
+      "id": 7,
+      "name": "The Passengers",
+      "pageCount": 383,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1545308633i/40718386.jpg",
+      "author": "John Marrs",
+      "year": 2019,
+      "description": "Eight self-drive cars set on a collision course. Who lives, who dies? You decide.",
+      "genre": "Thriller"
+    },
+    {
+      "id": 8,
+      "name": "Verity",
+      "pageCount": 336,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1634158558i/59344312.jpg",
+      "author": "Colleen Hoover",
+      "year": 2018,
+      "description": "tTe things lurking around inside the mind can be just as dangerous as tangible threats.",
+      "genre": "Thriller"
+    },
+    {
+      "id": 9,
+      "name": "Little Women",
+      "pageCount": 449,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "description": "Love is the only thing we can take with us when we leave.",
+      "genre": "Romance"
+    },
+    {
+      "id": 10,
+      "name": "Little Women",
+      "pageCount": 449,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "description": "Love is the only thing we can take with us when we leave.",
+      "genre": "Romance"
+    },
+    {
+      "id": 11,
+      "name": "Little Women",
+      "pageCount": 449,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "description": "Love is the only thing we can take with us when we leave.",
+      "genre": "Romance"
+    },
+    {
+      "id": 12,
+      "name": "Little Women",
+      "pageCount": 449,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "description": "Love is the only thing we can take with us when we leave.",
+      "genre": "Romance"
+    },
+    {
+      "name": "",
+      "pageCount": "",
+      "imgLink": "",
+      "author": "",
+      "description": "",
+      "genre": "",
+      "createDate": "",
+      "id": 13
+    },
+    {
+      "name": "",
+      "pageCount": "",
+      "imgLink": "",
+      "author": "",
+      "description": "",
+      "genre": "",
+      "createDate": "",
+      "id": 14
+    }
+  ]
+}
