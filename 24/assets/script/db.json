@@ -8,7 +8,8 @@
       "author": "Louisa May Alcott",
       "year": 1868,
       "description": "Love is the only thing we can take with us when we leave.",
-      "genre": "Romance"
+      "genre": "Romance",
+      "price": 24
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "author": "Jane Austen",
       "year": 1813,
       "description": "A lady's imagination is very rapid.",
-      "genre": "Romance"
+      "genre": "Romance",
+      "price": 24
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "author": "Charlotte Brontë",
       "year": 1847,
       "description": "I am a free human being with an independent will.",
-      "genre": "Romance"
+      "genre": "Romance",
+      "price": 24
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "author": "Jane Austen",
       "year": 1815,
       "description": "I am no bird; and no net ensnares me: I am a free human being with an independent will.",
-      "genre": "Romance"
+      "genre": "Romance",
+      "price": 24
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "author": "Alex Michaeldies",
       "year": 2019,
       "description": "Only she knows what happened. Only he can make her talk.",
-      "genre": "Thriller"
+      "genre": "Thriller",
+      "price": 24
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@
       "author": "Mike Omer",
       "year": 2016,
       "description": "Killers don’t patiently wait their turn before committing murder.",
-      "genre": "Thriller"
+      "genre": "Thriller",
+      "price": 24
     },
     {
       "id": 7,
@@ -68,7 +74,8 @@
       "author": "John Marrs",
       "year": 2019,
       "description": "Eight self-drive cars set on a collision course. Who lives, who dies? You decide.",
-      "genre": "Thriller"
+      "genre": "Thriller",
+      "price": 24
     },
     {
       "id": 8,
@@ -78,7 +85,8 @@
       "author": "Colleen Hoover",
       "year": 2018,
       "description": "tTe things lurking around inside the mind can be just as dangerous as tangible threats.",
-      "genre": "Thriller"
+      "genre": "Thriller",
+      "price": 24
     },
     {
       "id": 9,
@@ -88,7 +96,8 @@
       "author": "Louisa May Alcott",
       "year": 1868,
       "description": "Love is the only thing we can take with us when we leave.",
-      "genre": "Romance"
+      "genre": "Romance",
+      "price": 24
     },
     {
       "id": 10,
@@ -98,7 +107,8 @@
       "author": "Louisa May Alcott",
       "year": 1868,
       "description": "Love is the only thing we can take with us when we leave.",
-      "genre": "Romance"
+      "genre": "Romance",
+      "price": 24
     },
     {
       "id": 11,
@@ -108,7 +118,8 @@
       "author": "Louisa May Alcott",
       "year": 1868,
       "description": "Love is the only thing we can take with us when we leave.",
-      "genre": "Romance"
+      "genre": "Romance",
+      "price": 24
     },
     {
       "id": 12,
@@ -118,27 +129,8 @@
       "author": "Louisa May Alcott",
       "year": 1868,
       "description": "Love is the only thing we can take with us when we leave.",
-      "genre": "Romance"
-    },
-    {
-      "name": "",
-      "pageCount": "",
-      "imgLink": "",
-      "author": "",
-      "description": "",
-      "genre": "",
-      "createDate": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "pageCount": "",
-      "imgLink": "",
-      "author": "",
-      "description": "",
-      "genre": "",
-      "createDate": "",
-      "id": 14
+      "genre": "Romance",
+      "price": 24
     }
   ]
 }

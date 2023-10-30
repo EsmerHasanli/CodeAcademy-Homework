@@ -1,0 +1,31 @@
+
+
+#orders-table{
+    .container{
+        .table-row{
+            .table{
+                thead{
+                    background: rgba(255, 240, 199, 0.22);
+                    border-radius: 16px;
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(6.8px);
+                    -webkit-backdrop-filter: blur(6.8px);
+                    border: 1px solid rgba(255, 240, 199, 0.37);
+                    th{
+                        color: brown;
+                    }
+                }
+                tbody{
+                    tr{
+                        background: rgba(255, 240, 199, 0.22);
+                        border-radius: 16px;
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        backdrop-filter: blur(6.8px);
+                        -webkit-backdrop-filter: blur(6.8px);
+                        border: 1px solid rgba(255, 240, 199, 0.37);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -373,7 +373,7 @@ body {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow: hidden;
-  height: 50%;
+  height: 45%;
 }
 .box-wrapper .box .box-img img {
   height: 100%;
@@ -392,8 +392,9 @@ body {
   cursor: pointer;
 }
 .box-wrapper .box .box-btn {
+  margin-top: 10px;
   padding: 15px;
-  height: 10%;
+  height: 15%;
 }
 .box-wrapper .box .box-btn button {
   float: inline-end;
@@ -461,4 +462,26 @@ body {
   border-radius: 16px;
   min-height: 510px;
   padding: 5px;
+}
+
+#orders-table .container .table-row .table thead {
+  background: rgba(255, 240, 199, 0.22);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  border: 1px solid rgba(255, 240, 199, 0.37);
+}
+#orders-table .container .table-row .table thead th {
+  color: brown;
+}
+#orders-table .container .table-row .table tbody tr {
+  background: rgba(255, 240, 199, 0.22);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  border: 1px solid rgba(255, 240, 199, 0.37);
 }/*# sourceMappingURL=style.css.map */

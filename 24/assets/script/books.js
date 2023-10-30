@@ -9,10 +9,13 @@ let bookName = document.querySelectorAll('h5');
 let deleteBtn = document.querySelectorAll('#delete');
 let editBtn = document.querySelectorAll('#change');
 let detailsBtn = document.querySelectorAll('#details');
+let shopBtn = document.querySelectorAll('.cart');
+let cartCount = document.querySelector('.cartCount')
 let showMoreBtn = document.querySelector('#showMore');
 let submitBtn  = document.querySelector(".submitBtn")
 let modal = document.querySelector(".modal");
 let modalWrapper = document.querySelector(".modal_wrapper");
+let loader = document.querySelector(".loader-wrapper");
 
 //#region add new book
 const getBooks = async () => {
@@ -103,11 +106,13 @@ sortBtn.addEventListener('click', () =>{
                     <button id="delete" type="button" class="btn btn-danger" style="background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
                     <button id="change" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-solid fa-edit"></i></button>
                     <button id="details" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></button>
+                    <button id="${obj.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
                </div>
             </div>
         </div>
         `)
     })  
+    
 });
 //#endregion sort by
 
@@ -137,12 +142,14 @@ searchForm.addEventListener('keyup', (e)=>{
                                 <button id="delete" type="button" class="btn btn-danger" style="background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
                                 <button id="change" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-solid fa-edit"></i></button>
                                 <button id="details" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></button>
+                                <button  id="${book.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
                               </div>
                         </div>
                     </div>
                     `
                 }
             })
+            
         });
     })
 //#endregion
@@ -173,10 +180,6 @@ bookName.forEach((name) => {
 //#endregion
 
 //#region to details page
-detailsBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  
-})
 //#endregion
 
 //#region //!edit button
@@ -247,19 +250,19 @@ selectMenu.addEventListener("change", async (e) => {
                   <button id="delete" type="button" class="btn btn-danger" style="background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
                   <button id="change" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-solid fa-edit"></i></button>
                   <button id="details" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></button>
+                  <button id="${obj.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
                 </div>
           </div>
       </div>
     `;
   });
-
 });
 //#endregion
  
 //#region show more button
 showMoreBtn.addEventListener('click', function(e){
   e.preventDefault();
-
+  boxWrapper.innerHTML = ""
   fetch(API_BASE_URL)
     .then((response) => response.json())
     .then((books) => {
@@ -281,14 +284,132 @@ showMoreBtn.addEventListener('click', function(e){
                       <button id="delete" type="button" class="btn btn-danger" style="background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
                       <button id="change" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-solid fa-edit"></i></button>
                       <button id="details" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></button>
+                      <button id="${book.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
                   </div>
               </div>
           </div>
         `;
       });
+      //...
+      shopBtn.forEach((btn) => {
+        btn.addEventListener('click', function () {
+        fetch(API_BASE_URL+`/${this.id}`)
+        .then((response) => response.json())
+        .then((book) => {
+          if(localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0) {
+            book.quantity = 1
+            localStorage.setItem('cart', JSON.stringify([book]))
+          }else{
+            let card = JSON.parse(localStorage.getItem('cart'))
+            let found = card.find((x) => x.id === book.id)
+            if(found){
+              found.quantity++
+              localStorage.setItem('cart', JSON.stringify([...card]))
+              cartCount.textContent = JSON.parse(localStorage.getItem('cart')).length
+            }else{
+              book.quantity = 1
+              localStorage.setItem('cart', JSON.stringify([...card, book]))
+              cartCount.textContent = JSON.parse(localStorage.getItem('cart')).length
+            }
+          }
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Book added to cart',
+            showConfirmButton: false,
+            timer: 1000
+            })
+          })
+      });
+      })
+
+
+      bookName.forEach((name) => {
+        name.addEventListener('click', (e) => {
+            e.preventDefault();
+            fetch(API_BASE_URL)
+            .then((response) => response.json())
+            .then((books) => {
+                books.forEach(function(book){
+                    if(book.name.toLowerCase().trim() === name.textContent.toLowerCase().trim()) {
+                        Swal.fire({
+                            title: `${book.name}`,
+                            text: `${book.author}`,
+                            imageUrl: `${book.coverImage}`,
+                            imageWidth: 400,
+                            imageHeight: 500,
+                            imageAlt: 'Custom image',
+                        });
+                    }
+                });
+            });
+        });
+      });
+
+
+      deleteBtn.forEach((btn)=>{
+        btn.addEventListener('click',function(){
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#DD92A3',
+            cancelButtonColor: '#6EB4BC',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.parentElement.parentElement.parentElement.remove();
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+               'success'
+              )
+            }
+          })
+        })
+      })
+    //..
     })
 });
 
 //#endregion
 
+//#region shop button
+
+shopBtn.forEach((btn) => {
+  btn.addEventListener('click', function () {
+  fetch(API_BASE_URL+`/${this.id}`)
+  .then((response) => response.json())
+  .then((book) => {
+    if(localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0) {
+      book.quantity = 1
+      localStorage.setItem('cart', JSON.stringify([book]))
+    }else{
+      let card = JSON.parse(localStorage.getItem('cart'))
+      let found = card.find((x) => x.id === book.id)
+      if(found){
+        found.quantity++
+        localStorage.setItem('cart', JSON.stringify([...card]))
+        cartCount.textContent = JSON.parse(localStorage.getItem('cart')).length
+      }else{
+        book.quantity = 1
+        localStorage.setItem('cart', JSON.stringify([...card, book]))
+        cartCount.textContent = JSON.parse(localStorage.getItem('cart')).length
+      }
+    }
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Book added to cart',
+      showConfirmButton: false,
+      timer: 1000
+      })
+    })
+});
+})
+
+//#endregion
+
+cartCount.textContent = JSON.parse(localStorage.getItem('cart')).length
 
