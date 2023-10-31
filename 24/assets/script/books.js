@@ -1,4 +1,4 @@
-let API_BASE_URL = "http://localhost:3000/books";
+let API_BASE_URL = "  http://localhost:3000";
 let selectMenu = document.querySelector('#select-menu');
 let sortBtn = document.querySelector('#sortByYear');
 let addNewBtn = document.querySelector('#addNew');
@@ -19,7 +19,7 @@ let loader = document.querySelector(".loader-wrapper");
 
 //#region add new book
 const getBooks = async () => {
-  const res = await fetch(API_BASE_URL);
+  const res = await fetch(API_BASE_URL+'/books');
   if (res.ok) {
     const data = await res.json();
     return data;
@@ -56,7 +56,7 @@ const addNewBook = async (e) => {
 
   console.log(data);
 
-  await fetch(API_BASE_URL, {
+  await fetch(API_BASE_URL+'/books', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -85,28 +85,28 @@ addNewBtn.addEventListener("click" , () => {
 sortBtn.addEventListener('click', () =>{
     
     boxWrapper.innerHTML = ''
-    fetch(API_BASE_URL)
+    fetch(API_BASE_URL+'/books')
     .then((response) => response.json())
     .then((books) => {
         const yearsOfBook = books.sort((a, b) => a.year - b.year)
-        yearsOfBook.forEach((obj) => boxWrapper.innerHTML += `
+        yearsOfBook.forEach((book) => boxWrapper.innerHTML += `
         <div class="col-3">
             <div class="box">
                 <div class="box-img">
-                    <img src="${obj.coverImage}" id="card-img" class="card-img-top" alt="book cover">
+                    <img src="${book.coverImage}" id="card-img" class="card-img-top" alt="book cover">
                 </div>
                 <div class="box-descr">
-                    <h5>${obj.name}</h5>
-                    <h6>${obj.author}    <br>     ${obj.year}</h6>
-                    <p>${obj.description}</p>
-                    <p>${obj.pageCount} pages</p>
-                    <p>${obj.genre}</p>
+                    <h5>${book.name}</h5>
+                    <h6>${book.author}    <br>     ${book.year}</h6>
+                    <p>${book.description}</p>
+                    <p>${book.pageCount} pages</p>
+                    <p>${book.genre}</p>
                 </div>
                 <div class="box-btn">
                     <button id="delete" type="button" class="btn btn-danger" style="background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
                     <button id="change" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-solid fa-edit"></i></button>
-                    <button id="details" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></button>
-                    <button id="${obj.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <a id="details" class="btn btn-warning" href="detail.html?id=${book.id}"  style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></a>
+                    <button id="${book.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
                </div>
             </div>
         </div>
@@ -120,7 +120,7 @@ sortBtn.addEventListener('click', () =>{
 searchForm.addEventListener('keyup', (e)=>{
     e.preventDefault();
     boxWrapper.innerHTML = ''
-        fetch(API_BASE_URL)
+        fetch(API_BASE_URL+'/books')
         .then((response) => response.json())
         .then((books) => {
             books.forEach(function(book){
@@ -141,7 +141,7 @@ searchForm.addEventListener('keyup', (e)=>{
                             <div class="box-btn">
                                 <button id="delete" type="button" class="btn btn-danger" style="background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
                                 <button id="change" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-solid fa-edit"></i></button>
-                                <button id="details" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></button>
+                                <a id="details" class="btn btn-warning" href="detail.html?id=${book.id}"  style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></a>
                                 <button  id="${book.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
                               </div>
                         </div>
@@ -158,7 +158,7 @@ searchForm.addEventListener('keyup', (e)=>{
 bookName.forEach((name) => {
   name.addEventListener('click', (e) => {
       e.preventDefault();
-      fetch(API_BASE_URL)
+      fetch(API_BASE_URL+'/books')
       .then((response) => response.json())
       .then((books) => {
           books.forEach(function(book){
@@ -177,9 +177,6 @@ bookName.forEach((name) => {
   });
 });
 
-//#endregion
-
-//#region to details page
 //#endregion
 
 //#region //!edit button
@@ -216,7 +213,7 @@ deleteBtn.forEach((btn)=>{
 selectMenu.addEventListener("change", async (e) => {
   console.log(e.target.value);
 
-  const response = await fetch(API_BASE_URL);
+  const response = await fetch(API_BASE_URL+'/books');
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }
@@ -226,31 +223,31 @@ selectMenu.addEventListener("change", async (e) => {
   let sortedData = [];
 
   if (e.target.value !== 'all') {
-    sortedData = data.filter((obj) => obj.genre.toLowerCase() === e.target.value.toLowerCase());
+    sortedData = data.filter((book) => book.genre.toLowerCase() === e.target.value.toLowerCase());
   } else {
     sortedData = data;
   }
 
   boxWrapper.innerHTML = "";
-  sortedData.forEach((obj) => {
+  sortedData.forEach((book) => {
     boxWrapper.innerHTML += `
       <div class="col-3">
           <div class="box">
               <div class="box-img">
-                  <img src="${obj.coverImage}" id="card-img" class="card-img-top" alt="book cover">
+                  <img src="${book.coverImage}" id="card-img" class="card-img-top" alt="book cover">
               </div>
               <div class="box-descr">
-                  <h5>${obj.name}</h5>
-                  <h6>${obj.author}    <br>     ${obj.year}</h6>
-                  <p>${obj.description}</p>
-                  <p>${obj.pageCount} pages</p>
-                  <p>${obj.genre}</p>
+                  <h5>${book.name}</h5>
+                  <h6>${book.author}    <br>     ${book.year}</h6>
+                  <p>${book.description}</p>
+                  <p>${book.pageCount} pages</p>
+                  <p>${book.genre}</p>
               </div>
               <div class="box-btn">
                   <button id="delete" type="button" class="btn btn-danger" style="background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
                   <button id="change" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-solid fa-edit"></i></button>
-                  <button id="details" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></button>
-                  <button id="${obj.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
+                  <a id="details" class="btn btn-warning" href="detail.html?id=${book.id}"  style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></a>
+                  <button id="${book.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
                 </div>
           </div>
       </div>
@@ -263,7 +260,7 @@ selectMenu.addEventListener("change", async (e) => {
 showMoreBtn.addEventListener('click', function(e){
   e.preventDefault();
   boxWrapper.innerHTML = ""
-  fetch(API_BASE_URL)
+  fetch(API_BASE_URL+'/books')
     .then((response) => response.json())
     .then((books) => {
       books.forEach(function(book) {
@@ -283,7 +280,7 @@ showMoreBtn.addEventListener('click', function(e){
                   <div class="box-btn">
                       <button id="delete" type="button" class="btn btn-danger" style="background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
                       <button id="change" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-solid fa-edit"></i></button>
-                      <button id="details" type="button" class="btn btn-warning" style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></button>
+                      <a id="details" class="btn btn-warning" href="detail.html?id=${book.id}"  style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></a>
                       <button id="${book.id}" type="button" class="btn btn-warning cart" style="color: #ffffff; background-color:#bd825e; border: none;"><i class="fa-solid fa-cart-shopping"></i></button>
                   </div>
               </div>
@@ -293,7 +290,7 @@ showMoreBtn.addEventListener('click', function(e){
       //...
       shopBtn.forEach((btn) => {
         btn.addEventListener('click', function () {
-        fetch(API_BASE_URL+`/${this.id}`)
+        fetch(API_BASE_URL+'/books'+`/${this.id}`)
         .then((response) => response.json())
         .then((book) => {
           if(localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0) {
@@ -327,7 +324,7 @@ showMoreBtn.addEventListener('click', function(e){
       bookName.forEach((name) => {
         name.addEventListener('click', (e) => {
             e.preventDefault();
-            fetch(API_BASE_URL)
+            fetch(API_BASE_URL+'/books')
             .then((response) => response.json())
             .then((books) => {
                 books.forEach(function(book){
@@ -379,7 +376,7 @@ showMoreBtn.addEventListener('click', function(e){
 
 shopBtn.forEach((btn) => {
   btn.addEventListener('click', function () {
-  fetch(API_BASE_URL+`/${this.id}`)
+  fetch(API_BASE_URL+'/books'+`/${this.id}`)
   .then((response) => response.json())
   .then((book) => {
     if(localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0) {
@@ -412,4 +409,3 @@ shopBtn.forEach((btn) => {
 //#endregion
 
 cartCount.textContent = JSON.parse(localStorage.getItem('cart')).length
-

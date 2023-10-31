@@ -2,9 +2,9 @@ let id = new URLSearchParams(location.search).get('id');
 let dataName = document.querySelector('.data-name');
 
 document.addEventListener('DOMContentLoaded',()=>{
-    fetch(`${API_BASE_URL}/${id}`)
+    fetch(`http://localhost:3000/books/${id}`)
     .then(res=>res.json())
-    .then(data=>{
-        dataName.textContent = data.name;
+    .then(book=>{
+        dataName.textContent = book.name;
     })
 })
