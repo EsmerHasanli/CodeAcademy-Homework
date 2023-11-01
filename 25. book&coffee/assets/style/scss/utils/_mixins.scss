@@ -1,0 +1,8 @@
+@mixin space-between {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+//   @mixin horizontal-list {
+//     @include reset-list;

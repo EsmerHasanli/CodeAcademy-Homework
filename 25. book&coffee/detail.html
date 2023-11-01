@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/style/css/style.css">
+    <title>Books</title>
+</head>
+<body> 
+    <header>
+        <nav>
+            <div class="container">
+                <div class="row">
+                    <div class="nav-bar-logo col-6"> 
+                        <a href="./index.html"><img src="./assets/icons/logo1.png" alt="logo"></a>
+                    </div>
+                    <div class="nav-bar-links col-6">
+                        <ul id="pages col-3">
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./books.html">Books</a></li>
+                            <li><a href="./coffee.html">Coffee</a></li>
+                            <li><a href="./whislist.html">Whislist</a></li>
+                            <li><a href="./orders.html">Orders</a></li>
+                        </ul>
+                        <ul id="register col-3">
+                            <li><a href="./">logIn</a></li>
+                            <li><a href="./">signUp</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="box-wrapper">
+                                                <!-- <div class="col-3">
+                            <div class="box">
+                                <div class="box-img">
+                                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg" id="card-img" class="card-img-top" alt="book cover">
+                                </div>
+                                <div class="box-descr">
+                                    <h5>Little Women</h5>
+                                    <h6>Louisa May Alcott     <br>     1868</h6>
+                                    <p>Love is the only thing we can take with us when we leave.</p>
+                                    <p>449 pages</p>
+                                    <p>Romance</p>
+                                </div>
+                                <div class="box-btn">
+                                    <button id="delete" type="button" class="btn" style="color: #ffffff; background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
+                                    <button id="favorite" type="button" class="btn" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></button>
+                                    <a id="details" class="btn btn-warning" href="detail.html?id=${book.id}"  style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- main script -->
+    <script src="./assets/script/main.js"></script>
+</body>
+</html>

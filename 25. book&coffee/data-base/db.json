@@ -1,0 +1,316 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "Little Women",
+      "pageCount": 449,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "description": "Love is the only thing we can take with us when we leave.",
+      "genre": "Romance",
+      "price": 24
+    },
+    {
+      "id": 2,
+      "name": "Pride and Prejudice",
+      "pageCount": 279,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg",
+      "author": "Jane Austen",
+      "year": 1813,
+      "description": "A lady's imagination is very rapid.",
+      "genre": "Romance",
+      "price": 24
+    },
+    {
+      "id": 3,
+      "name": "Jane Eyre",
+      "pageCount": 532,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1557343311i/10210.jpg",
+      "author": "Charlotte Brontë",
+      "year": 1847,
+      "description": "I am a free human being with an independent will.",
+      "genre": "Romance",
+      "price": 24
+    },
+    {
+      "id": 4,
+      "name": "Emma",
+      "pageCount": 1036,
+      "coverImage": "https://almabooks.com/wp-content/uploads/2016/10/9781847494139.jpg",
+      "author": "Jane Austen",
+      "year": 1815,
+      "description": "I am no bird; and no net ensnares me: I am a free human being with an independent will.",
+      "genre": "Romance",
+      "price": 24
+    },
+    {
+      "id": 5,
+      "name": "The Silent Patient",
+      "pageCount": 348,
+      "coverImage": "https://m.media-amazon.com/images/I/717Q8dxjBpL._AC_UF1000,1000_QL80_.jpg",
+      "author": "Alex Michaeldies",
+      "year": 2019,
+      "description": "Only she knows what happened. Only he can make her talk.",
+      "genre": "Thriller",
+      "price": 24
+    },
+    {
+      "id": 6,
+      "name": "Deadly Web",
+      "pageCount": 318,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1464598026i/30310540.jpg",
+      "author": "Mike Omer",
+      "year": 2016,
+      "description": "Killers don’t patiently wait their turn before committing murder.",
+      "genre": "Thriller",
+      "price": 24
+    },
+    {
+      "id": 7,
+      "name": "The Passengers",
+      "pageCount": 383,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1545308633i/40718386.jpg",
+      "author": "John Marrs",
+      "year": 2019,
+      "description": "Eight self-drive cars set on a collision course. Who lives, who dies? You decide.",
+      "genre": "Thriller",
+      "price": 24
+    },
+    {
+      "id": 8,
+      "name": "Verity",
+      "pageCount": 336,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1634158558i/59344312.jpg",
+      "author": "Colleen Hoover",
+      "year": 2018,
+      "description": "tTe things lurking around inside the mind can be just as dangerous as tangible threats.",
+      "genre": "Thriller",
+      "price": 24
+    },
+    {
+      "id": 9,
+      "name": "The Maltese Falcon",
+      "pageCount": 217,
+      "coverImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/hostedimages/1458507981i/18496365._SY540_.jpg",
+      "author": "Dashiell Hammett",
+      "year": 1930,
+      "description": "The classic hardboiled detective story that introduces the iconic Sam Spade.",
+      "genre": "Detective",
+      "price": 24
+    },
+    {
+      "id": 10,
+      "name": "The Girl with the Dragon Tattoo",
+      "pageCount": 672,
+      "coverImage": "https://i.pinimg.com/originals/3b/ab/1e/3bab1ee24acb08377ba653449a7a66aa.png",
+      "author": "Stieg Larsson",
+      "year": 2005,
+      "description": " A gripping tale of mystery and intrigue centered around journalist Mikael Blomkvist and hacker Lisbeth Salander.",
+      "genre": "Detective",
+      "price": 24
+    },
+    {
+      "id": 11,
+      "name": "The Cuckoo's Calling",
+      "pageCount": 464,
+      "coverImage": "https://www.hachettebookgroup.com/wp-content/uploads/2017/06/9781478983675.jpg",
+      "author": "J.K. Rowling",
+      "year": 2013,
+      "description": "The first book in the Cormoran Strike series, featuring private investigator Cormoran Strike.",
+      "genre": "Detective",
+      "price": 24
+    },
+    {
+      "id": 12,
+      "name": "In the Woods",
+      "pageCount": 429,
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/3/3c/In_the_Woods_cover.jpg",
+      "author": "Tana French",
+      "year": 2007,
+      "description": "A gripping psychological thriller involving a detective haunted by his past.",
+      "genre": "Detective",
+      "price": 24
+    },
+    {
+      "id": 13,
+      "name": "Harry Potter and the Sorcerer's Stone",
+      "pageCount": 309,
+      "coverImage": "https://m.media-amazon.com/images/I/71-++hbbERL.jpg",
+      "author": "J.K. Rowling",
+      "year": 1997,
+      "description": "The first book in the beloved Harry Potter series, chronicling the young wizard's adventures.",
+      "genre": "Fantastic",
+      "price": 24
+    },
+    {
+      "id": 14,
+      "name": "The Name of the Wind",
+      "pageCount": 662,
+      "coverImage": "https://i.pinimg.com/originals/76/46/bd/7646bd00c04a0171ac29baecb4b113de.jpg",
+      "author": "Patrick Rothfuss",
+      "year": 2007,
+      "description": "An epic fantasy following the story of Kvothe, a magically gifted young man.",
+      "genre": "Fantastic",
+      "price": 24
+    },
+    {
+      "id": 15,
+      "name": "Mistborn: The Final Empire",
+      "pageCount": 541,
+      "coverImage": "https://m.media-amazon.com/images/I/618kMrmCLpL._AC_UF1000,1000_QL80_.jpg",
+      "author": "Brandon Sanderson",
+      "year": 2006,
+      "description": "The first book in the Cormoran Strike series, featuring private investigator Cormoran Strike.",
+      "genre": "Fantastic",
+      "price": 24
+    },
+    {
+      "id": 16,
+      "name": "The Hobbit",
+      "pageCount": 322,
+      "coverImage": "https://www.thoughtco.com/thmb/pwPKDEoO5J6AFh_m9tVIrKHBGfw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/The-Hobbit_5-58b5c8343df78cdcd8bbb86e.jpg",
+      "author": "J.R.R. Tolkien",
+      "year": 1937,
+      "description": "The prelude to the famous Lord of the Rings series, following the adventures of Bilbo Baggins.",
+      "genre": "Fantastic",
+      "price": 24
+    },
+    {
+      "id": 17,
+      "name": "Dune",
+      "pageCount": 688,
+      "coverImage": "https://i.pinimg.com/736x/5a/ee/e7/5aeee7f39d369c19ecd25f598780e1dc.jpg",
+      "author": "Frank Herbert",
+      "year": 1965,
+      "description": "A science fiction masterpiece set in a distant future amidst political intrigue and interstellar conflicts.",
+      "genre": "Science Fiction",
+      "price": 24
+    },
+    {
+      "id": 18,
+      "name": "Neuromancer",
+      "pageCount": 271,
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/I/51ojzN10rHL.jpg",
+      "author": "William Gibson",
+      "year": 1984,
+      "description": "A groundbreaking novel that popularized the cyberpunk genre.",
+      "genre": "Science Fiction",
+      "price": 24
+    },
+    {
+      "id": 19,
+      "name": "The Martian",
+      "pageCount": 369,
+      "coverImage": "https://i.pinimg.com/originals/e1/1b/93/e11b9361743dc4345b49c8bf98ef377c.jpg",
+      "author": "Andy Weir",
+      "year": 2011,
+      "description": "A gripping story of survival on Mars after an astronaut is stranded.",
+      "genre": "Science Fiction",
+      "price": 24
+    },
+    {
+      "id": 20,
+      "name": "Foundation",
+      "pageCount": 244,
+      "coverImage": "https://retrobookcovers.com/wp-content/uploads/2019/03/asimov-foundation-01.jpg",
+      "author": "Isaac Asimov",
+      "year": 1951,
+      "description": "The first book in the seminal Foundation series exploring the fall of a vast galactic empire.",
+      "genre": "Science Fiction",
+      "price": 24
+    }
+  ],
+  "coffees": [
+    {
+      "id": 1,
+      "name": "Espresso",
+      "price": 2.99,
+      "ingredients": ["Coffee beans"],
+      "imageLink": "https://example.com/espresso.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Cappuccino",
+      "price": 3.49,
+      "ingredients": ["Espresso", "Steamed milk", "Milk foam"],
+      "imageLink": "https://example.com/cappuccino.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Latte",
+      "price": 3.99,
+      "ingredients": ["Espresso", "Steamed milk"],
+      "imageLink": "https://example.com/latte.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Mocha",
+      "price": 4.29,
+      "ingredients": ["Espresso", "Steamed milk", "Chocolate", "Whipped cream"],
+      "imageLink": "https://example.com/mocha.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Americano",
+      "price": 3.19,
+      "ingredients": ["Espresso", "Hot water"],
+      "imageLink": "https://example.com/americano.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Macchiato",
+      "price": 3.79,
+      "ingredients": ["Espresso", "A dollop of milk foam"],
+      "imageLink": "https://example.com/macchiato.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Affogato",
+      "price": 4.49,
+      "ingredients": ["Espresso", "Vanilla gelato or ice cream"],
+      "imageLink": "https://example.com/affogato.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Flat White",
+      "price": 4.09,
+      "ingredients": ["Espresso", "Microfoam"],
+      "imageLink": "https://example.com/flat_white.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "esmer_2708",
+      "password": "Esmer123!",
+      "email": "esmer@gmail.com",
+      "balance": "50",
+      "orders": []
+    },
+    {
+      "id": 2,
+      "username": "nicimdov",
+      "password": "N&827icat",
+      "email": "esmer@gmail.com",
+      "balance": "100",
+      "orders": []
+    },
+    {
+      "id": 3,
+      "username": "slhv",
+      "password": "ayshenn2004?",
+      "email": "ayshennn@gmail.com",
+      "balance": "150",
+      "orders": []
+    },
+    {
+      "id": 4,
+      "username": "klauzzd",
+      "password": "salam234",
+      "email": "oktay@gmail.com",
+      "balance": "200",
+      "orders": []
+    }
+  ]
+}
