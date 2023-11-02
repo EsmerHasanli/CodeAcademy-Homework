@@ -226,57 +226,83 @@
       "id": 1,
       "name": "Espresso",
       "price": 2.99,
-      "ingredients": ["Coffee beans"],
-      "imageLink": "https://example.com/espresso.jpg"
+      "ingredients": [
+        "Coffee beans"
+      ],
+      "imageLink": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     },
     {
       "id": 2,
       "name": "Cappuccino",
       "price": 3.49,
-      "ingredients": ["Espresso", "Steamed milk", "Milk foam"],
-      "imageLink": "https://example.com/cappuccino.jpg"
+      "ingredients": [
+        "Espresso",
+        "Steamed milk",
+        "Milk foam"
+      ],
+      "imageLink": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     },
     {
       "id": 3,
       "name": "Latte",
       "price": 3.99,
-      "ingredients": ["Espresso", "Steamed milk"],
-      "imageLink": "https://example.com/latte.jpg"
+      "ingredients": [
+        "Espresso",
+        "Steamed milk"
+      ],
+      "imageLink": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     },
     {
       "id": 4,
       "name": "Mocha",
       "price": 4.29,
-      "ingredients": ["Espresso", "Steamed milk", "Chocolate", "Whipped cream"],
-      "imageLink": "https://example.com/mocha.jpg"
+      "ingredients": [
+        "Espresso",
+        "Steamed milk",
+        "Chocolate",
+        "Whipped cream"
+      ],
+      "imageLink": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     },
     {
       "id": 5,
       "name": "Americano",
       "price": 3.19,
-      "ingredients": ["Espresso", "Hot water"],
-      "imageLink": "https://example.com/americano.jpg"
+      "ingredients": [
+        "Espresso",
+        "Hot water"
+      ],
+      "imageLink": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     },
     {
       "id": 6,
       "name": "Macchiato",
       "price": 3.79,
-      "ingredients": ["Espresso", "A dollop of milk foam"],
-      "imageLink": "https://example.com/macchiato.jpg"
+      "ingredients": [
+        "Espresso",
+        "A dollop of milk foam"
+      ],
+      "imageLink": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     },
     {
       "id": 7,
       "name": "Affogato",
       "price": 4.49,
-      "ingredients": ["Espresso", "Vanilla gelato or ice cream"],
-      "imageLink": "https://example.com/affogato.jpg"
+      "ingredients": [
+        "Espresso",
+        "Vanilla gelato or ice cream"
+      ],
+      "imageLink": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     },
     {
       "id": 8,
       "name": "Flat White",
       "price": 4.09,
-      "ingredients": ["Espresso", "Microfoam"],
-      "imageLink": "https://example.com/flat_white.jpg"
+      "ingredients": [
+        "Espresso",
+        "Microfoam"
+      ],
+      "imageLink": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     }
   ],
   "users": [

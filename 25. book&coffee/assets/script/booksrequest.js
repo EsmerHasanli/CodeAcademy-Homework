@@ -20,3 +20,13 @@ export async function getBookByID (id){
     return globalData
 }
 
+//delete buttons
+export async function deleteBook(){
+    let globalData;
+    await axios.delete(API_BASE_URL+`/books`)
+    .then((result) => {
+        console.log(result);
+        globalData = result.data;
+    })
+    return globalData
+}

@@ -354,4 +354,70 @@ nav .nav-bar-links #register li:first-of-type {
 }
 .btn-wrapper button:hover {
   background-color: rgb(141, 85, 45);
+}
+
+.sort-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sort-bar button {
+  float: rigth;
+}
+
+.box-wrapper-coffee {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.box-wrapper-coffee .box {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 10px;
+  height: 430px;
+}
+.box-wrapper-coffee .box .box-img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  height: 45%;
+}
+.box-wrapper-coffee .box .box-img img {
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.box-wrapper-coffee .box .box-descr {
+  padding: 15px;
+  height: 40%;
+}
+.box-wrapper-coffee .box .box-btn {
+  padding: 15px;
+  height: 15%;
+}
+.box-wrapper-coffee .box .box-btn button {
+  float: inline-end;
+  margin-left: 3px;
+}
+.box-wrapper-coffee .box .box-btn a {
+  float: inline-end;
 }/*# sourceMappingURL=style.css.map */
