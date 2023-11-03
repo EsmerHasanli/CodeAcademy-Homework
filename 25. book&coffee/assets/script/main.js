@@ -5,10 +5,18 @@ const path = window.location.pathname
 
 if (path == "/books.html") {
 
-let booksWrapper = document.querySelector('.box-wrapper');
+    //whish count
+    if (JSON.parse(localStorage.getItem('fav'))) {
+        let wishCount = (JSON.parse(localStorage.getItem('fav'))).length;
+        let wishCountSpan = document.querySelector('#whish-list-count');
+        wishCountSpan.textContent = wishCount;
+        
+    }
+
+    let booksWrapper = document.querySelector('.box-wrapper');
 
     document.addEventListener("DOMContentLoaded", async () => {
-    
+        //get books
         const books = await getAllBooks()
         books.forEach((book) =>{
          booksWrapper.innerHTML += `
@@ -33,7 +41,7 @@ let booksWrapper = document.querySelector('.box-wrapper');
      </div>
          `
 
-         //add to favorite
+        //add to favorite
         let favBtn = booksWrapper.querySelectorAll('#favorite')
          favBtn.forEach(btn => {
          btn.addEventListener("click", async (e) => {
@@ -48,8 +56,7 @@ let booksWrapper = document.querySelector('.box-wrapper');
              }
          })
     })
-     
-     
+
          //delete buttons
          let deleteBtn = booksWrapper.querySelectorAll('#delete')
          deleteBtn.forEach((btn) => {
@@ -130,9 +137,68 @@ let booksWrapper = document.querySelector('.box-wrapper');
                 })
             })
         }
+
+        
+        //#region add new book
+        
+        const addNewBook = async (e) => {
+            e.preventDefault();
+            let name = document.querySelector(".name").value;
+            let pageCount = document.querySelector(".pg-count").value;
+            let imgLink = document.querySelector(".img-link").value;
+            let author = document.querySelector(".author").value;
+            let description = document.querySelector(".description").value;
+            let genre = document.querySelector(".genre").value;
+            let createDate = document.querySelector(".description").value;
+        
+            const lastBook = booksData[booksData.length - 1];
+            const lastElementId = lastBook ? lastBook.id + 1 : 1;
+        
+            const data = {
+            name,
+            pageCount,
+            imgLink,
+            author,
+            description,
+            genre,
+            createDate,
+            id: lastElementId
+            };
+        
+            console.log(data);
+        
+            axios.post(API_BASE_URL+'/books'), {
+
+            };
+            
+        };
+        //добовляем
+        submitBtn.addEventListener("click", (e) => addNewBook(e));
+        submitBtn.addEventListener("click", (e) => addNewBook(e))
+        // закрывает модалку
+        modal.addEventListener("click", () => {
+            modal.className = "modal"
+        
+        })
+        // не реагирует на клик по белому окну в модалке
+        modalWrapper.addEventListener("click", (e) =>  e.stopPropagation())
+        // открывает модалку
+        addNewBtn.addEventListener("click" , () => {
+            console.log("hello")
+            modal.className += " active"
+        })
+        //#endregion 
     }
 
 if (path == '/whislist.html') {
+
+    if (JSON.parse(localStorage.getItem('fav'))) {
+        let wishCount = (JSON.parse(localStorage.getItem('fav'))).length;
+        let wishCountSpan = document.querySelector('#whish-list-count');
+        wishCountSpan.textContent = wishCount;
+        
+    }
+
     const wishList = document.querySelector("#wish-list")
         document.addEventListener("DOMContentLoaded", async () => {
             const books = await getAllBooks()
@@ -150,10 +216,12 @@ if (path == '/whislist.html') {
                     }
                     i++
                 }
+                let count
                 newArr.forEach((book) => {
+                    count++
                     wishList.innerHTML += `
                     <tr>
-                        <td>${book.id}</td>
+                        <td>${count}</td>
                         <td><img style="height: 125px; width:80px;" src="${book.coverImage}" alt=""></td>
                         <td>${book.name}</td>
                         <td>${book.author}</td>
@@ -174,6 +242,13 @@ if (path == '/whislist.html') {
     }
         
 if (path == "/coffee.html")  {
+
+    if (JSON.parse(localStorage.getItem('fav'))) {
+        let wishCount = (JSON.parse(localStorage.getItem('fav'))).length;
+        let wishCountSpan = document.querySelector('#whish-list-count');
+        wishCountSpan.textContent = wishCount;
+    }
+
     let coffeeWrapper = document.querySelector('.box-wrapper-coffee')
     document.addEventListener("DOMContentLoaded", async () => {
     //get elements 
@@ -203,32 +278,43 @@ if (path == "/coffee.html")  {
     let cartBtn = coffeeWrapper.querySelectorAll('#cart')
     cartBtn.forEach(btn => {
         btn.addEventListener("click", async (e) => {
-            const arrFromLocal = JSON.parse(localStorage.getItem("idCoffeeArr"))
+            const arrFromLocal = JSON.parse(localStorage.getItem("cart"))
             const id = btn.getAttribute("data-id")
              if (!arrFromLocal) {
-                const arr = [id]
-                localStorage.setItem("idCoffeeArr", JSON.stringify(arr))
+                const arr = [{id: id}]
+                localStorage.setItem("cart", JSON.stringify(arr))
             }else {
-                arrFromLocal.push(id)            
-                localStorage.setItem("idCoffeeArr", JSON.stringify(arrFromLocal))
+                let coffeeId = {
+                    id: id
+                }
+                arrFromLocal.push(coffeeId)         
+                localStorage.setItem("cart", JSON.stringify(arrFromLocal))
             }
          })
      })
+
      
-     if (JSON.parse(localStorage.getItem('idCoffeeArr'))) {
-         let basketCount = (JSON.parse(localStorage.getItem('idCoffeeArr'))).length;
+     if (JSON.parse(localStorage.getItem('cart'))) {
+         let basketCount = (JSON.parse(localStorage.getItem('cart'))).length;
          let basketCountSpan = document.querySelector('#basket-quantity');
          basketCountSpan.textContent = basketCount;
          
      }
- 
+
+     //delete button
+     let deleteBtn = coffeeWrapper.querySelectorAll('#delete')
+     deleteBtn.forEach((btn) => {
+        btn.addEventListener('click', function (){
+            this.parentElement.parentElement.parentElement.remove()
+        })
+     })
     })
-}    
+    }    
 
 if (path == "/orders.html") {
 
-    if (JSON.parse(localStorage.getItem('idCoffeeArr'))) {
-        let basketCount = (JSON.parse(localStorage.getItem('idCoffeeArr'))).length;
+    if (JSON.parse(localStorage.getItem('cart'))) {
+        let basketCount = (JSON.parse(localStorage.getItem('cart'))).length;
         let basketCountSpan = document.querySelector('#basket-quantity');
         basketCountSpan.textContent = basketCount;
         
@@ -238,30 +324,31 @@ if (path == "/orders.html") {
 
     const basket = document.querySelector("#basket-elements")
     const coffees = await getAllCoffees()
-    const dataFromLocal = JSON.parse(localStorage.getItem("idCoffeeArr"))
+    const dataFromLocal = JSON.parse(localStorage.getItem("cart"))
     if (!dataFromLocal) {
         basket.innerHTML = `<div>Empty</div>`
     }else {
     let i = 0
     const newArr = []
         while (i < dataFromLocal.length) {
-            const findedCoffee = coffees.find((obj) => obj.id == dataFromLocal[i]) 
+            const findedCoffee = coffees.find((order) => order.id == dataFromLocal[i].id) 
             if (findedCoffee) {
                 newArr.push(findedCoffee)
             }
         
             i++
         }
+        
         newArr.forEach((coffee) => {
             basket.innerHTML += `
             <tr>
-                <td>${coffee.id}</td>
+                <td class="coffeeID">${coffee.id}</td>
                 <td><img  style="width:100px; height:100px" src= ${coffee.imageLink}></td>        
                 <td>${coffee.name}</td>
-                <td>${coffee.price}</td>
-                <td>${coffee.price}</td>
+                <td class="price">${coffee.price}</td>
+                <td class="totalPrice">${coffee.price}</td>
                 <td><button id="increase" type="button" class="btn" style="color: white; background-color:rgb(109,126,94); border: none;"><i class="fa-solid fa-plus"></i></button></td>
-                <td><button id="decrase" type="button" class="btn" style="color: white; background-color:rgb(27,56,62); border: none;"><i class="fa-solid fa-minus"></i></button></td>
+                <td><button id="decrease" type="button" class="btn" style="color: white; background-color:rgb(27,56,62); border: none;"><i class="fa-solid fa-minus"></i></button></td>
                 <td><button id="delete" type="button" class="btn" style="color: #ffffff; background-color:rgb(159,107,57); border: none;"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
             `
@@ -275,64 +362,40 @@ if (path == "/orders.html") {
             })
 
             //increase
-            let localCoffeeArr 
-            let counter = 1
-            let increaseBtn = basket.querySelectorAll('#increase')
-            increaseBtn.forEach((btn)=>{
+
+            let increaseBtn = basket.querySelectorAll('#increase');
+            increaseBtn.forEach((btn) =>{
                 btn.addEventListener('click', function(){
-                    
+                    const price = this.parentElement.parentElement.querySelector(".price").textContent
+                    const totalPriceContext = this.parentElement.parentElement.querySelector(".totalPrice").textContent
+                    const totalPrice = this.parentElement.parentElement.querySelector(".totalPrice")
+                    totalPrice.textContent = (Number(totalPriceContext) + Number(price)).toFixed(2)
                 })
             })
 
+
             //decrease
+            let dereaseBtn = basket.querySelectorAll('#decrease');
+            dereaseBtn.forEach((btn) =>{
+                btn.addEventListener('click', function(){
+                
+
+                    const price = this.parentElement.parentElement.querySelector(".price").textContent
+                    const totalPriceContext = this.parentElement.parentElement.querySelector(".totalPrice").textContent
+                    const totalPrice = this.parentElement.parentElement.querySelector(".totalPrice")
+                    
+                    if (Number(totalPriceContext) <= Number(price)) {
+                        alert("You cannot decrease")
+                    }
+                    else {
+                        totalPrice.textContent = (Number(totalPriceContext) - Number(price)).toFixed(2)
+                    }
+                })
+            })
+
+
+            
         })
     }
-    })
-}
-
-
-
-
-
-
-
-
-
-
-
-
-//muellim bu sizin koddu hele bunu bawa duwmemiwem hele ki burda qalsin
-//add to fav 
-    // let favBtn = booksWrapper.querySelectorAll('#favorite') 
-    // let localFavArray = JSON.parse(localStorage.getItem('fav'))
-    // let arr = []
-    // let whishListCounter = document.querySelector('#whish-list-count')
-    // favBtn.forEach((btn) => {
-    //     if(localFavArray){
-    //         arr = localFavArray
-    //     }
-    //     btn.addEventListener('click', function(){
-    //         if(!JSON.parse(localStorage.getItem('fav'))){
-    //             localStorage.setItem('fav', JSON.stringify([{id: this.getAttribute('data-id')}]))
-    //             this.children[0].classList.replace('fa-regular', 'fa-solid')
-    //         }else{
-    //             let cardsLocal = JSON.parse(localStorage.getItem('fav'))
-    //             let found = cardsLocal.find((x)=> x.id == this.getAttribute('data-id'))
-    //             if(found){
-    //                 found.quantity++
-    //                 this.children[0].classList.replace('fa-solid', 'fa-regular')
-    //                 let updatedFav = cardsLocal.filter((x)=> x.id != this.getAttribute('data-id'))
-    //                 localStorage.setItem('fav', JSON.stringify(updatedFav))
-    //                 whishListCounter.textContent = JSON.parse(localStorage.getItem('fav')).length
-    //             }else{
-    //                 this.children[0].classList.replace('fa-regular', 'fa-solid')
-    //                 localStorage.setItem('fav', JSON.stringify([...cardsLocal, {id:  this.getAttribute('data-id')}]))
-    //                 whishListCounter.textContent = JSON.parse(localStorage.getItem('fav')).length
-    //             }
-    //         }
-    //         console.log(arr);
-    //     })
-    // })
-
-
-
+})
+    }

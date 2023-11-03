@@ -28,7 +28,7 @@
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="./books.html">Books</a></li>
                             <li><a href="./coffee.html">Coffee</a></li>
-                            <li><a href="./whislist.html">Whislist<sup id="whish-list-count" class="mx-2">0</sup></a></li>
+                            <li><a href="./whislist.html">Whislist<sup id="whish-list-count" class="mx-2"></sup></a></li>
                         </ul>
                         <ul id="register col-3">
                             <li><a href="./logIn.html">logIn</a></li>
@@ -54,6 +54,30 @@
                         </div>
                     </div>
     
+                    <!-- modal -->
+                    <div class="modal"  aria-hidden="true">
+                        <div class="modal_wrapper" >
+                            <h1>Add book</h1>
+                            <div >
+                                <p>Book name:</p>
+                                <input required class="name" type="text" miinlength="3" style="outline: none;" placeholder="Book name"/>
+                                <p>Page count:</p>
+                                <input required class="pg-count"type="number"  style="outline: none;" min="1" max="700" placeholder="Page count"/>
+                                <p>Image link:</p>
+                                <input required class="img-link" type="text" style="outline: none;" placeholder="Image link"/>
+                                <p>Author:</p>
+                                <input required class="author" type="text" maxlength="25" style="outline: none;" placeholder="Author"/>
+                                <p>Description:</p>
+                                <input required class="description"type="text" maxlength="125" style="outline: none;" placeholder="Image link"/>
+                                <p>Create date:</p>
+                                <input required class="create-date" type="number"  style="outline: none;"  placeholder="Date"/>
+                                <p>Genre:</p>
+                                <input required class="genre" type="text" maxlength="25" style="outline: none;" placeholder="Genre"/>
+                                <button  class="submitBtn" style="background-color: rgb(234, 242, 163); outline: none; padding: 5px;">Create Book</button>
+                            </div>
+                
+                        </div>
+                    </div>
 
                 </section>
                 <section id="books">
@@ -64,7 +88,6 @@
             </div>
         </div>
     </main>
-
 
     <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

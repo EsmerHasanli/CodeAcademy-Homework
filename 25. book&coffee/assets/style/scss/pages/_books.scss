@@ -62,3 +62,35 @@
         float: rigth;
     }
 }
+
+
+.modal {
+    display: flex;
+    position: fixed;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.504);
+    width: 100vw;
+    display: none;
+    height: 100vh;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.modal.active {
+    display: flex;
+}
+.modal_wrapper {
+    background-color: white !important;
+    min-width: 510px;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    min-height: 510px;
+    padding: 5px;
+}
