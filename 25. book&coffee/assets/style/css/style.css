@@ -266,6 +266,11 @@ nav .nav-bar-links ul li:hover a {
 nav .nav-bar-links #register li:first-of-type {
   margin-right: 15px;
 }
+nav .nav-bar-links #loged button {
+  background-color: transparent;
+  border: none;
+  color: rgb(90, 72, 60);
+}
 
 #hero {
   position: relative;
@@ -369,6 +374,55 @@ nav .nav-bar-links #register li:first-of-type {
 }
 .sort-bar button {
   float: rigth;
+}
+
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  color: black;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.504);
+  width: 100vw;
+  display: none;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal_wrapper {
+  background-color: white !important;
+  min-width: 510px;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 16px;
+  min-height: 510px;
+  padding: 5px;
 }
 
 .box-wrapper-coffee {

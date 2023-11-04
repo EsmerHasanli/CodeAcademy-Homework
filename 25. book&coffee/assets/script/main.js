@@ -1,25 +1,46 @@
-import {getAllBooks, deleteBook} from './booksrequest.js'
-import {getAllCoffees} from './coffeesrequest.js'
+import { getAllBooks, deleteBook } from "./booksrequest.js";
+import { getAllCoffees } from "./coffeesrequest.js";
 
-const path = window.location.pathname
+document.addEventListener("DOMContentLoaded", ()=>{
+    const userBar = document.querySelector("#loged")
+    const username = document.querySelector("#username")
+    const registerBar = document.querySelector('#register')
+    const loggedUserId = JSON.parse(localStorage.getItem('users'));
+    console.log(loggedUserId)
+    if (loggedUserId.id) {
+
+      userBar.classList.replace('d-none', 'd-flex')
+      registerBar.classList.replace('d-flex', 'd-none')
+
+      username.textContent = loggedUserId.email
+      }
+})
+
+
+const path = window.location.pathname;
 
 if (path == "/books.html") {
+  //whish count
+  if (JSON.parse(localStorage.getItem("fav"))) {
+    let wishCount = JSON.parse(localStorage.getItem("fav")).length;
+    let wishCountSpan = document.querySelector("#whish-list-count");
+    wishCountSpan.textContent = wishCount;
+  }
 
-    //whish count
-    if (JSON.parse(localStorage.getItem('fav'))) {
-        let wishCount = (JSON.parse(localStorage.getItem('fav'))).length;
-        let wishCountSpan = document.querySelector('#whish-list-count');
-        wishCountSpan.textContent = wishCount;
-        
-    }
+  //cart count
+  if (JSON.parse(localStorage.getItem("cart"))) {
+    let basketCount = JSON.parse(localStorage.getItem("cart")).length;
+    let basketCountSpan = document.querySelector("#basket-quantity");
+    basketCountSpan.textContent = basketCount;
+  }
 
-    let booksWrapper = document.querySelector('.box-wrapper');
+  let booksWrapper = document.querySelector(".box-wrapper");
 
-    document.addEventListener("DOMContentLoaded", async () => {
-        //get books
-        const books = await getAllBooks()
-        books.forEach((book) =>{
-         booksWrapper.innerHTML += `
+  document.addEventListener("DOMContentLoaded", async () => {
+    //get books
+    const books = await getAllBooks();
+    books.forEach((book) => {
+      booksWrapper.innerHTML += `
          <div class="col-3 col-md-6 col-sm-12">
          <div class="box">
              <div class="box-img">
@@ -39,46 +60,51 @@ if (path == "/books.html") {
              </div>
          </div>
      </div>
-         `
+         `;
 
-        //add to favorite
-        let favBtn = booksWrapper.querySelectorAll('#favorite')
-         favBtn.forEach(btn => {
-         btn.addEventListener("click", async (e) => {
-             const arrFromLocal = JSON.parse(localStorage.getItem("fav"))
-             const id = btn.getAttribute("data-id")
-             if (!arrFromLocal) {
-                 const arr = [id]
-                 localStorage.setItem("fav", JSON.stringify(arr))
-             }else { 
-                 arrFromLocal.push(id)            
-                 localStorage.setItem("fav", JSON.stringify(arrFromLocal))
-             }
-         })
-    })
+      //add to favorite
+      let favBtn = booksWrapper.querySelectorAll("#favorite");
+      favBtn.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+          const arrFromLocal = JSON.parse(localStorage.getItem("fav"));
+          const id = btn.getAttribute("data-id");
+          if (!arrFromLocal) {
+            const arr = [id];
+            localStorage.setItem("fav", JSON.stringify(arr));
+          } else {
+            arrFromLocal.push(id);
+            localStorage.setItem("fav", JSON.stringify(arrFromLocal));
+          }
+        });
+      });
 
-         //delete buttons
-         let deleteBtn = booksWrapper.querySelectorAll('#delete')
-         deleteBtn.forEach((btn) => {
-             btn.addEventListener('click', (e) =>{
-                  deleteBook()
-                 e.target.parentElement.parentElement.parentElement.remove();
-             })
-         })
-        })
-       });
+      //delete buttons
+      let deleteBtn = booksWrapper.querySelectorAll("#delete");
+      deleteBtn.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          deleteBook();
+          e.target.parentElement.parentElement.parentElement.remove();
+        });
+      });
+    });
+  });
 
-    //search books
-    let searchBar = document.querySelector('#book-search')
- 
-    searchBar.addEventListener('keyup', async (e)=>{
-        e.preventDefault();
-        booksWrapper.innerHTML = ''
-        const books = await getAllBooks()
-    
-        books.forEach((book)=>{
-            if(book.name.toLowerCase().trim().includes(e.target.value.toLowerCase().trim())){
-                booksWrapper.innerHTML += `
+  //search books
+  let searchBar = document.querySelector("#book-search");
+
+  searchBar.addEventListener("keyup", async (e) => {
+    e.preventDefault();
+    booksWrapper.innerHTML = "";
+    const books = await getAllBooks();
+
+    books.forEach((book) => {
+      if (
+        book.name
+          .toLowerCase()
+          .trim()
+          .includes(e.target.value.toLowerCase().trim())
+      ) {
+        booksWrapper.innerHTML += `
                 <div class="col-3 col-md-6 col-sm-12">
                 <div class="box">
                     <div class="box-img">
@@ -98,22 +124,20 @@ if (path == "/books.html") {
                     </div>
                 </div>
             </div>
-                `
-            }
-        })          
-    })         
+                `;
+      }
+    });
+  });
 
- 
-
-//sort by year 
-    let sortByYearBtn = document.querySelector('#sortByYear')
-    if (sortByYearBtn) {
-        sortByYearBtn.addEventListener('click', async() =>{
-            const books = await getAllBooks()
-            booksWrapper.innerHTML = ""
-            const yearsOfBook = books.sort((a, b) => a.year - b.year);
-            yearsOfBook.forEach((book) => {
-                booksWrapper.innerHTML += `
+  //sort by year
+  let sortByYearBtn = document.querySelector("#sortByYear");
+  if (sortByYearBtn) {
+    sortByYearBtn.addEventListener("click", async () => {
+      const books = await getAllBooks();
+      booksWrapper.innerHTML = "";
+      const yearsOfBook = books.sort((a, b) => a.year - b.year);
+      yearsOfBook.forEach((book) => {
+        booksWrapper.innerHTML += `
                         <div class="col-3 col-md-6 col-sm-12">
                         <div class="box">
                             <div class="box-img">
@@ -133,93 +157,48 @@ if (path == "/books.html") {
                             </div>
                         </div>
                     </div>
-                        `
-                })
-            })
+                        `;
+      });
+    });
+  }
+
+}
+
+if (path == "/whislist.html") {
+  //whish count
+  if (JSON.parse(localStorage.getItem("fav"))) {
+    let wishCount = JSON.parse(localStorage.getItem("fav")).length;
+    let wishCountSpan = document.querySelector("#whish-list-count");
+    wishCountSpan.textContent = wishCount;
+  }
+
+  //cart count
+  if (JSON.parse(localStorage.getItem("cart"))) {
+    let basketCount = JSON.parse(localStorage.getItem("cart")).length;
+    let basketCountSpan = document.querySelector("#basket-quantity");
+    basketCountSpan.textContent = basketCount;
+  }
+
+  const wishList = document.querySelector("#wish-list");
+  document.addEventListener("DOMContentLoaded", async () => {
+    const books = await getAllBooks();
+    const dataFromLocal = JSON.parse(localStorage.getItem("fav"));
+    if (!dataFromLocal) {
+      wishList.innerHTML = `<span>Your Whish list is empty!</span>`;
+    } else {
+      let i = 0;
+      const newArr = [];
+      while (i < dataFromLocal.length) {
+        const findedBook = books.find((book) => book.id == dataFromLocal[i]);
+        if (findedBook) {
+          newArr.push(findedBook);
         }
-
-        
-        //#region add new book
-        
-        const addNewBook = async (e) => {
-            e.preventDefault();
-            let name = document.querySelector(".name").value;
-            let pageCount = document.querySelector(".pg-count").value;
-            let imgLink = document.querySelector(".img-link").value;
-            let author = document.querySelector(".author").value;
-            let description = document.querySelector(".description").value;
-            let genre = document.querySelector(".genre").value;
-            let createDate = document.querySelector(".description").value;
-        
-            const lastBook = booksData[booksData.length - 1];
-            const lastElementId = lastBook ? lastBook.id + 1 : 1;
-        
-            const data = {
-            name,
-            pageCount,
-            imgLink,
-            author,
-            description,
-            genre,
-            createDate,
-            id: lastElementId
-            };
-        
-            console.log(data);
-        
-            axios.post(API_BASE_URL+'/books'), {
-
-            };
-            
-        };
-        //добовляем
-        submitBtn.addEventListener("click", (e) => addNewBook(e));
-        submitBtn.addEventListener("click", (e) => addNewBook(e))
-        // закрывает модалку
-        modal.addEventListener("click", () => {
-            modal.className = "modal"
-        
-        })
-        // не реагирует на клик по белому окну в модалке
-        modalWrapper.addEventListener("click", (e) =>  e.stopPropagation())
-        // открывает модалку
-        addNewBtn.addEventListener("click" , () => {
-            console.log("hello")
-            modal.className += " active"
-        })
-        //#endregion 
-    }
-
-if (path == '/whislist.html') {
-
-    if (JSON.parse(localStorage.getItem('fav'))) {
-        let wishCount = (JSON.parse(localStorage.getItem('fav'))).length;
-        let wishCountSpan = document.querySelector('#whish-list-count');
-        wishCountSpan.textContent = wishCount;
-        
-    }
-
-    const wishList = document.querySelector("#wish-list")
-        document.addEventListener("DOMContentLoaded", async () => {
-            const books = await getAllBooks()
-            const dataFromLocal = JSON.parse(localStorage.getItem("fav"))
-            if (!dataFromLocal) {
-                wishList.innerHTML = `<span>Your Whish list is empty!</span>`
-            }
-            else {
-                let i = 0
-                const newArr = []
-                while (i < dataFromLocal.length) {
-                    const findedBook = books.find((book) => book.id == dataFromLocal[i]) 
-                    if (findedBook) {
-                        newArr.push(findedBook)
-                    }
-                    i++
-                }
-                let count
-                newArr.forEach((book) => {
-                    count++
-                    wishList.innerHTML += `
+        i++;
+      }
+      let count;
+      newArr.forEach((book) => {
+        count++;
+        wishList.innerHTML += `
                     <tr>
                         <td>${count}</td>
                         <td><img style="height: 125px; width:80px;" src="${book.coverImage}" alt=""></td>
@@ -229,32 +208,39 @@ if (path == '/whislist.html') {
                         <td>${book.genre}</td>
                         <td><button id="delete" type="button" class="btn" style="color: #ffffff; background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button></td>
                     </tr>
-                    `
-                    const deleteBook = document.querySelectorAll('#delete')
-                    deleteBook.forEach((btn) => {
-                        btn.addEventListener('click', function(){
-                            this.parentElement.parentElement.remove()
-                        })
-                    })
-                })
-            }
-        })
+                    `;
+        const deleteBook = document.querySelectorAll("#delete");
+        deleteBook.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            this.parentElement.parentElement.remove();
+          });
+        });
+      });
     }
-        
-if (path == "/coffee.html")  {
+  });
+}
 
-    if (JSON.parse(localStorage.getItem('fav'))) {
-        let wishCount = (JSON.parse(localStorage.getItem('fav'))).length;
-        let wishCountSpan = document.querySelector('#whish-list-count');
-        wishCountSpan.textContent = wishCount;
-    }
+if (path == "/coffee.html") {
+  //whish count
+  if (JSON.parse(localStorage.getItem("fav"))) {
+    let wishCount = JSON.parse(localStorage.getItem("fav")).length;
+    let wishCountSpan = document.querySelector("#whish-list-count");
+    wishCountSpan.textContent = wishCount;
+  }
 
-    let coffeeWrapper = document.querySelector('.box-wrapper-coffee')
-    document.addEventListener("DOMContentLoaded", async () => {
-    //get elements 
-    const coffees = await getAllCoffees()
-    coffees.forEach((coffee) =>{
-        coffeeWrapper.innerHTML += `
+  //cart count
+  if (JSON.parse(localStorage.getItem("cart"))) {
+    let basketCount = JSON.parse(localStorage.getItem("cart")).length;
+    let basketCountSpan = document.querySelector("#basket-quantity");
+    basketCountSpan.textContent = basketCount;
+  }
+
+  let coffeeWrapper = document.querySelector(".box-wrapper-coffee");
+  document.addEventListener("DOMContentLoaded", async () => {
+    //get elements
+    const coffees = await getAllCoffees();
+    coffees.forEach((coffee) => {
+      coffeeWrapper.innerHTML += `
             <div class="col-3 col-md-6 col-sm-12">
             <div class="box">
                 <div class="box-img">
@@ -271,76 +257,75 @@ if (path == "/coffee.html")  {
                 </div>
             </div>
         </div>
-         `
-        })
+         `;
+    });
 
     //add to cart
-    let cartBtn = coffeeWrapper.querySelectorAll('#cart')
-    cartBtn.forEach(btn => {
-        btn.addEventListener("click", async (e) => {
-            const arrFromLocal = JSON.parse(localStorage.getItem("cart"))
-            const id = btn.getAttribute("data-id")
-             if (!arrFromLocal) {
-                const arr = [{id: id}]
-                localStorage.setItem("cart", JSON.stringify(arr))
-            }else {
-                let coffeeId = {
-                    id: id
-                }
-                arrFromLocal.push(coffeeId)         
-                localStorage.setItem("cart", JSON.stringify(arrFromLocal))
-            }
-         })
-     })
+    let cartBtn = coffeeWrapper.querySelectorAll("#cart");
+    cartBtn.forEach((btn) => {
+      btn.addEventListener("click", async (e) => {
+        const arrFromLocal = JSON.parse(localStorage.getItem("cart"));
+        const id = btn.getAttribute("data-id");
+        if (!arrFromLocal) {
+          const arr = [{ id: id }];
+          localStorage.setItem("cart", JSON.stringify(arr));
+        } else {
+          let coffeeId = {
+            id: id,
+          };
+          arrFromLocal.push(coffeeId);
+          localStorage.setItem("cart", JSON.stringify(arrFromLocal));
+        }
+      });
+    });
 
-     
-     if (JSON.parse(localStorage.getItem('cart'))) {
-         let basketCount = (JSON.parse(localStorage.getItem('cart'))).length;
-         let basketCountSpan = document.querySelector('#basket-quantity');
-         basketCountSpan.textContent = basketCount;
-         
-     }
-
-     //delete button
-     let deleteBtn = coffeeWrapper.querySelectorAll('#delete')
-     deleteBtn.forEach((btn) => {
-        btn.addEventListener('click', function (){
-            this.parentElement.parentElement.parentElement.remove()
-        })
-     })
-    })
-    }    
+    //delete button
+    let deleteBtn = coffeeWrapper.querySelectorAll("#delete");
+    deleteBtn.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        this.parentElement.parentElement.parentElement.remove();
+      });
+    });
+  });
+}
 
 if (path == "/orders.html") {
+  //whish count
+  if (JSON.parse(localStorage.getItem("fav"))) {
+    let wishCount = JSON.parse(localStorage.getItem("fav")).length;
+    let wishCountSpan = document.querySelector("#whish-list-count");
+    wishCountSpan.textContent = wishCount;
+  }
 
-    if (JSON.parse(localStorage.getItem('cart'))) {
-        let basketCount = (JSON.parse(localStorage.getItem('cart'))).length;
-        let basketCountSpan = document.querySelector('#basket-quantity');
-        basketCountSpan.textContent = basketCount;
-        
-    }
+  //cart count
+  if (JSON.parse(localStorage.getItem("cart"))) {
+    let basketCount = JSON.parse(localStorage.getItem("cart")).length;
+    let basketCountSpan = document.querySelector("#basket-quantity");
+    basketCountSpan.textContent = basketCount;
+  }
 
-    document.addEventListener("DOMContentLoaded", async () => {
-
-    const basket = document.querySelector("#basket-elements")
-    const coffees = await getAllCoffees()
-    const dataFromLocal = JSON.parse(localStorage.getItem("cart"))
+  document.addEventListener("DOMContentLoaded", async () => {
+    const basket = document.querySelector("#basket-elements");
+    const coffees = await getAllCoffees();
+    const dataFromLocal = JSON.parse(localStorage.getItem("cart"));
     if (!dataFromLocal) {
-        basket.innerHTML = `<div>Empty</div>`
-    }else {
-    let i = 0
-    const newArr = []
-        while (i < dataFromLocal.length) {
-            const findedCoffee = coffees.find((order) => order.id == dataFromLocal[i].id) 
-            if (findedCoffee) {
-                newArr.push(findedCoffee)
-            }
-        
-            i++
+      basket.innerHTML = `<div>Empty</div>`;
+    } else {
+      let i = 0;
+      const newArr = [];
+      while (i < dataFromLocal.length) {
+        const findedCoffee = coffees.find(
+          (order) => order.id == dataFromLocal[i].id
+        );
+        if (findedCoffee) {
+          newArr.push(findedCoffee);
         }
-        
-        newArr.forEach((coffee) => {
-            basket.innerHTML += `
+
+        i++;
+      }
+
+      newArr.forEach((coffee) => {
+        basket.innerHTML += `
             <tr>
                 <td class="coffeeID">${coffee.id}</td>
                 <td><img  style="width:100px; height:100px" src= ${coffee.imageLink}></td>        
@@ -351,51 +336,62 @@ if (path == "/orders.html") {
                 <td><button id="decrease" type="button" class="btn" style="color: white; background-color:rgb(27,56,62); border: none;"><i class="fa-solid fa-minus"></i></button></td>
                 <td><button id="delete" type="button" class="btn" style="color: #ffffff; background-color:rgb(159,107,57); border: none;"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
-            `
-            //delete
-            let deleteBtn = basket.querySelectorAll('#delete')
-            deleteBtn.forEach((btn)=>{
-                btn.addEventListener('click', function(){
-                    console.log(this.parentElement.parentElement);
-                    this.parentElement.parentElement.remove()
-                })
-            })
+            `;
+        //delete
+        let deleteBtn = basket.querySelectorAll("#delete");
+        deleteBtn.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            console.log(this.parentElement.parentElement);
+            this.parentElement.parentElement.remove();
+          });
+        });
 
-            //increase
+        //increase
 
-            let increaseBtn = basket.querySelectorAll('#increase');
-            increaseBtn.forEach((btn) =>{
-                btn.addEventListener('click', function(){
-                    const price = this.parentElement.parentElement.querySelector(".price").textContent
-                    const totalPriceContext = this.parentElement.parentElement.querySelector(".totalPrice").textContent
-                    const totalPrice = this.parentElement.parentElement.querySelector(".totalPrice")
-                    totalPrice.textContent = (Number(totalPriceContext) + Number(price)).toFixed(2)
-                })
-            })
+        let increaseBtn = basket.querySelectorAll("#increase");
+        increaseBtn.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const price =
+              this.parentElement.parentElement.querySelector(
+                ".price"
+              ).textContent;
+            const totalPriceContext =
+              this.parentElement.parentElement.querySelector(
+                ".totalPrice"
+              ).textContent;
+            const totalPrice =
+              this.parentElement.parentElement.querySelector(".totalPrice");
+            totalPrice.textContent = (
+              Number(totalPriceContext) + Number(price)
+            ).toFixed(2);
+          });
+        });
 
+        //decrease
+        let dereaseBtn = basket.querySelectorAll("#decrease");
+        dereaseBtn.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const price =
+              this.parentElement.parentElement.querySelector(
+                ".price"
+              ).textContent;
+            const totalPriceContext =
+              this.parentElement.parentElement.querySelector(
+                ".totalPrice"
+              ).textContent;
+            const totalPrice =
+              this.parentElement.parentElement.querySelector(".totalPrice");
 
-            //decrease
-            let dereaseBtn = basket.querySelectorAll('#decrease');
-            dereaseBtn.forEach((btn) =>{
-                btn.addEventListener('click', function(){
-                
-
-                    const price = this.parentElement.parentElement.querySelector(".price").textContent
-                    const totalPriceContext = this.parentElement.parentElement.querySelector(".totalPrice").textContent
-                    const totalPrice = this.parentElement.parentElement.querySelector(".totalPrice")
-                    
-                    if (Number(totalPriceContext) <= Number(price)) {
-                        alert("You cannot decrease")
-                    }
-                    else {
-                        totalPrice.textContent = (Number(totalPriceContext) - Number(price)).toFixed(2)
-                    }
-                })
-            })
-
-
-            
-        })
+            if (Number(totalPriceContext) <= Number(price)) {
+              alert("You cannot decrease");
+            } else {
+              totalPrice.textContent = (
+                Number(totalPriceContext) - Number(price)
+              ).toFixed(2);
+            }
+          });
+        });
+      });
     }
-})
-    }
+  });
+}

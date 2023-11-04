@@ -308,35 +308,87 @@
   "users": [
     {
       "id": 1,
+      "name": "Esmer Hasanli",
+      "email": "esmer@gmail.com",
       "username": "esmer_2708",
       "password": "Esmer123!",
-      "email": "esmer@gmail.com",
       "balance": "50",
       "orders": []
     },
     {
       "id": 2,
-      "username": "nicimdov",
+      "name": "Nicat Mecidov",
+      "email": "nicat@gmail.com",
+      "username": "nmdov",
       "password": "N&827icat",
-      "email": "esmer@gmail.com",
       "balance": "100",
       "orders": []
     },
     {
       "id": 3,
+      "name": "Ayshen Salahova",
+      "email": "ayshennn@gmail.com",
       "username": "slhv",
       "password": "ayshenn2004?",
-      "email": "ayshennn@gmail.com",
       "balance": "150",
       "orders": []
     },
     {
       "id": 4,
+      "name": "Oktay Isgenderov",
+      "email": "oktay@gmail.com",
       "username": "klauzzd",
       "password": "salam234",
-      "email": "oktay@gmail.com",
       "balance": "200",
       "orders": []
+    },
+    {
+      "name": "Ayan  Asgarli",
+      "email": "ayan@mail.ru",
+      "username": "ayanasgarli",
+      "password": "ayan123",
+      "balance": "150",
+      "id": 5
+    },
+    {
+      "name": "Nehru Zamora",
+      "email": "cura@mailinator.com",
+      "username": "puqexo",
+      "password": "Pa$$w0rd!",
+      "balance": "91",
+      "id": 6
+    },
+    {
+      "name": "Lionel Powell",
+      "email": "tugohajaf@mailinator.com",
+      "username": "pynon",
+      "password": "Pa$$w0rd!",
+      "balance": "90",
+      "id": 7
+    },
+    {
+      "name": "Jasper Mccullough",
+      "email": "syre@mailinator.com",
+      "username": "goqazip",
+      "password": "Pa$$w0rd!",
+      "balance": "45",
+      "id": 8
+    },
+    {
+      "name": "Vernon Cotton",
+      "email": "tekocitof@mailinator.com",
+      "username": "tyreqapy",
+      "password": "Pa$$w0rd!",
+      "balance": "70",
+      "id": 9
+    },
+    {
+      "name": "Amity Cole",
+      "email": "esmer@gmail.com",
+      "username": "byceropi",
+      "password": "Pa$$w0rd!",
+      "balance": "45",
+      "id": 10
     }
   ]
 }

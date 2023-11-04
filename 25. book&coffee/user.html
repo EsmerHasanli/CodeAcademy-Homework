@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <!-- bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- custom css -->
     <link rel="stylesheet" href="./assets/style/css/style.css">
-    <title>Coffee</title>
+    <title>LogIn</title>
 </head>
 <body> 
     <header>
@@ -44,48 +44,36 @@
             </div>
         </nav>
     </header>
-    
     <main>
-        <div class="container">
-            <div class="row">
-                <section id="coofees">
-                    <div class="box-wrapper-coffee mt-5 d-flex justify-content-between flex-wrap">
-
-                        <!-- <div class="col-3">
-                            <div class="box">
-                                <div class="box-img">
-                                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg" id="card-img" class="card-img-top" alt="book cover">
-                                </div>
-                                <div class="box-descr">
-                                    <h5>Little Women</h5>
-                                    <h6>Louisa May Alcott     <br>     1868</h6>
-                                    <p>Love is the only thing we can take with us when we leave.</p>
-                                    <p>449 pages</p>
-                                    <p>Romance</p>
-                                </div>
-                                <div class="box-btn">
-                                    <button id="delete" type="button" class="btn" style="color: #ffffff; background-color:#a96030; border: none;"><i class="fa-solid fa-trash"></i></button>
-                                    <button id="favorite" type="button" class="btn" style="color: #ffffff; background-color:#A98064; border: none;"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></button>
-                                    <a id="details" class="btn btn-warning" href="detail.html?id=${book.id}"  style="color: #ffffff; background-color:#88766a; border: none;"><i class="fa-solid fa-gear"></i></a>
-                                </div>
-                            </div>
-                        </div> -->
-    
+        <section>
+            <div class="container">
+                <div class="row mt-5">
+                    <div id="user-info" class="col-3 border p-2">
                     </div>
-                </section>
+                    <div class="col-1"></div>
+                    <div class="col-8">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Total Price</th>
+                                <th scope="col">Order Date</th>
+                              </tr>
+                            </thead>
+                            <tbody id="user-orders">
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
-
-
     <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- axios cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js" integrity="sha512-WrdC3CE9vf1nBf58JHepuWT4x24uTacky9fuzw2g/3L9JkihgwZ6Cfv+JGTtNyosOhEmttMtEZ6H3qJWfI7gIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <!-- axios cdn -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js" integrity="sha512-WrdC3CE9vf1nBf58JHepuWT4x24uTacky9fuzw2g/3L9JkihgwZ6Cfv+JGTtNyosOhEmttMtEZ6H3qJWfI7gIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- main script -->
+    <script src="./assets/script/user.js"></script>
     <script type="module" src="./assets/script/main.js"></script>
 </body>
 </html>
-
-
-<!-- <i class="fa-solid fa-heart" style="color: #ffffff;"></i> -->
