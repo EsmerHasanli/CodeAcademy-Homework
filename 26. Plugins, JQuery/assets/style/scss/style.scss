@@ -1,0 +1,110 @@
+//reset
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+//swipers 
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 80%;
+  height: 80%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-title{
+    position: absolute;
+    z-index: 9;
+    bottom:3%;
+    right:5%;
+    color: brown;
+}
+
+
+
+
+//
+form{
+    padding: 20px;
+}
+
+.card{
+  width: 30%
+}
+
+.images-wrapper{
+  img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+  }
+}
+
+header{
+  background: rgb(179,175,247);
+background: linear-gradient(356deg, rgba(179,175,247,1) 28%, rgba(138,197,219,1) 62%, rgba(189,228,236,1) 86%);
+}
+
+
+//modal
+#edit-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+    .modal {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 40%;
+    }
+}
+
+.active{
+  display: flex;
+}
+
