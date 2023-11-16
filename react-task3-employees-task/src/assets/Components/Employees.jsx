@@ -15,7 +15,7 @@ function Employees () {
   useEffect(()=>{
     const allEmp = newEmployee.map((emp)=> emp.id == employee.id ? employee : emp);
     setNewEmployee(allEmp);
-  },[employee]);
+  },[employee, setNewEmployee]);
 
 
   const handleSortByAge = () => {
