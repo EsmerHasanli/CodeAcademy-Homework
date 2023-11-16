@@ -3,6 +3,7 @@ import UserLogin from './UserLogin.jsx'
 import UserRegister from './UserRegister.jsx'
 import ProductsTable from './ProductsTable.jsx'
 import UserLogout from './Logout.jsx'
+import PropTypes from 'prop-types';
 
 
 export const ProductsPage = () => {
@@ -20,5 +21,28 @@ export const ProductsPage = () => {
     </>
   )
 }
+
+UserLogin.propTypes = {
+  users: PropTypes.array,
+  setUsers: PropTypes.func,
+  loggedInUser: PropTypes.object,
+  setLoggedInUser: PropTypes.func,
+  loggedOutUser: PropTypes.object,
+  setLoggedOutUser: PropTypes.func,
+};
+
+UserRegister.propTypes = {
+  users: PropTypes.array,
+  setUsers: PropTypes.func,
+};
+
+UserLogout.propTypes = {
+  loggedOutUser: PropTypes.object,
+  setLoggedOutUser: PropTypes.func,
+};
+
+ProductsTable.propTypes = {
+  loggedInUser: PropTypes.object,
+};
 
 export default ProductsPage

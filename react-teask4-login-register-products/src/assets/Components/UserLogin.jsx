@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Input } from '@chakra-ui/react';
 import { getAllUsers } from '../script/usersrequest.js';
+import PropTypes from 'prop-types';
 
 const UserLogin = ({ users, setUsers, loggedInUser, setLoggedInUser, loggedOutUser, setLoggedOutUser }) => {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -67,5 +68,13 @@ const UserLogin = ({ users, setUsers, loggedInUser, setLoggedInUser, loggedOutUs
     </>
   )
 }
+
+UserLogin.propTypes = {
+  users: PropTypes.array,
+  setUsers: PropTypes.func,
+  setLoggedInUser: PropTypes.func,
+  loggedOutUser: PropTypes.object,
+  setLoggedOutUser: PropTypes.func,
+};
 
 export default UserLogin;

@@ -3,6 +3,7 @@ import { Button, Input } from '@chakra-ui/react';
 import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 import { v4 as uuidv4 } from 'uuid';
 import { postUser } from '../script/usersrequest.js'
+import PropTypes from 'prop-types';
 
 export const UserRegister = ({ users, setUsers, loggedInUser }) => {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
@@ -56,5 +57,14 @@ export const UserRegister = ({ users, setUsers, loggedInUser }) => {
     </>
   )
 }
+
+
+UserRegister.propTypes = {
+  users: PropTypes.array,
+  setUsers: PropTypes.func,
+  loggedInUser: PropTypes.array,
+  setLoggedInUser: PropTypes.func,
+};
+
 
 export default UserRegister

@@ -16,6 +16,7 @@ import {
   putProductByID,
   deleteProductsByID,
 } from "../script/productsrequests.js";
+import PropTypes from 'prop-types';
 
 const ProductsTable = ({ loggedInUser }) => {
   const [products, setProducts] = useState([]);
@@ -305,6 +306,10 @@ const ProductsTable = ({ loggedInUser }) => {
       )}
     </>
   );
+};
+
+ProductsTable.propTypes = {
+    isAdmin: PropTypes.bool,
 };
 
 export default ProductsTable;
