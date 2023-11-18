@@ -37,7 +37,7 @@ export const UserRegister = ({ users, setUsers, loggedInUser }) => {
   }
 
   const handleCheckboxChange = () => {
-    setIsAdmin(isAdmin)
+    setIsAdmin(!isAdmin)
   }
 
   return (
