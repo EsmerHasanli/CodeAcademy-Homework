@@ -1,0 +1,119 @@
+{
+    "albums": [
+      {
+        "id": 1,
+        "name": "Daylight",
+        "artistName": "Taylor Swift",
+        "year": 2019,
+        "albumCover": "https://static.wikia.nocookie.net/taylor-swift-fanon/images/2/21/Daylight_Album_Cover.png/revision/latest?cb=20220506055638",
+        "genre": "Pop"
+      },
+      {
+        "id": 2,
+        "name": "Good Girl Gone Bad ",
+        "artistName": "Rihanna",
+        "year": 2007,
+        "albumCover": "https://www.lntvglobal.com/media/214121/rhianna-2.jpg?anchor=center&mode=crop&width=1060&height=596",
+        "genre": "R&B"
+      },
+      {
+        "id": 3,
+        "name": "Favourite Worst Nightmare",
+        "artistName": "Arctic Monkeys",
+        "year": 2007,
+        "albumCover": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Favourite_Worst_Nightmare.jpg/220px-Favourite_Worst_Nightmare.jpg",
+        "genre": "Rock"
+      },
+      {
+        "id": 4,
+        "name": "Damn",
+        "artistName": "Kendrick Lamar",
+        "year": 2017,
+        "albumCover": "https://img.buzzfeed.com/buzzfeed-static/complex/images/uf8wc5mobnf4a46sdm9v/kendrick-lamar-damn.jpg",
+        "genre": "Hip Hop"
+      },
+      {
+        "id": 5,
+        "name": "Crash My Party",
+        "artistName": "Luke Bryan",
+        "year": 2013,
+        "albumCover": "https://upload.wikimedia.org/wikipedia/en/5/50/CrashMyPartyCD.jpg",
+        "genre": "Country"
+      },
+      {
+        "id": 6,
+        "name": "+x",
+        "artistName": "Martin Garrix",
+        "year": 2022,
+        "albumCover": "https://i.scdn.co/image/ab67616d0000b273c6f9783d7f7670d09454ef71",
+        "genre": "Electronic"
+      },
+      {
+        "id": 7,
+        "name": "A Love Supreme",
+        "artistName": "John Coltrane",
+        "year": 1965,
+        "albumCover": "https://m.media-amazon.com/images/I/A1skFEvCDML._UF1000,1000_QL80_.jpg",
+        "genre": "Jazz"
+      },
+      {
+        "id": 8,
+        "name": "Live at the Regal",
+        "artistName": "B.B. King",
+        "year": 1965,
+        "albumCover": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/BB_King-Live_at_the_Regal_%28album_cover%29.jpg/220px-BB_King-Live_at_the_Regal_%28album_cover%29.jpg",
+        "genre": "Blues"
+      },
+      {
+        "id": 9,
+        "name": "Legend",
+        "artistName": "Bob Marley",
+        "year": 1984,
+        "albumCover": "https://i.discogs.com/7ctuJCLeu8wyo-sbuduaOlqNNb9G0GzO8K4UC2drgpY/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMDIw/NDAtMTI5Mjk0MDU4/Mi5qcGVn.jpeg",
+        "genre": "Reggae"
+      },
+      {
+        "id": 10,
+        "name": "Is This It",
+        "artistName": "The Strokes",
+        "year": 2001,
+        "albumCover": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/The_Strokes_-_Ist_Tis_It_US_cover.png/220px-The_Strokes_-_Ist_Tis_It_US_cover.png",
+        "genre": "Indie"
+      },
+      {
+        "id": 11,
+        "name": "Clair de Lune",
+        "artistName": "Claude Debussy",
+        "year": 1905,
+        "albumCover": "https://www.udiscovermusic.com/wp-content/uploads/2019/06/Moonlight-Sontage-featured-image-1000.jpg",
+        "genre": "Classical"
+      },
+      {
+        "id": 12,
+        "name": "The Number of the Beast",
+        "artistName": "Iron Maiden",
+        "year": 1982,
+        "albumCover": "https://i.scdn.co/image/ab67616d0000b273f63f421ee3bcc38b9f4e5965",
+        "genre": "Metal"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "username": "esmer",
+        "email": "esmer@gmail.com",
+        "password": "esmer123",
+        "wishlistItems": [],
+        "createdAt": 1637200000000
+      },
+      {
+        "id": 2,
+        "username": "nicat",
+        "email": "nicat@gmail.com",
+        "password": "nicat123",
+        "wishlistItems": [],
+        "createdAt": 16372864000200
+      }
+    ]
+  }
+  
