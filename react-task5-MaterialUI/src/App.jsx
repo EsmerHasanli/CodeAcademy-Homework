@@ -4,6 +4,7 @@ import Albums from './assets/Components/Albums';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import AlbumLayout from './assets/Components/AlbumLayout';
 
 export default function App() {
 
@@ -20,6 +21,7 @@ export default function App() {
       <CssBaseline />
       <>
         <Navbar />
+        <AlbumLayout  albums={albums}/>
         <Albums albums={albums} setAlbums={setAlbums} />
       </>
     </ThemeProvider>
