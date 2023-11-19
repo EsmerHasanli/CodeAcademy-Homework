@@ -41,7 +41,7 @@ export default function LoginModal() {
             alert('User with this email or password was not defined')
         }
         else{
-            localStorage.setItem('user', JSON.stringify({id: user.id, email: user.email, isAdmin: user.isAdmin}))
+            localStorage.setItem('user', JSON.stringify(user))
             setOpen(false)
             location.reload()
         }

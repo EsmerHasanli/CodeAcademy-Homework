@@ -1,7 +1,7 @@
 import API_BASE_URL from "./base-url";
 import axios from 'axios';
 
-//products get all
+//albums get all
 export async function getAllAlbums(){
     let globalData; //undefined
     await axios.get(API_BASE_URL+'/albums')
@@ -12,8 +12,8 @@ export async function getAllAlbums(){
     return globalData;
 }
 
-//products get by ID
-export async function getProductsByID(id){
+//albums get by ID
+export async function getAlbumsByID(id){
     let globalData; //undefined
     await axios.get(API_BASE_URL+`/albums/${id}`)
     .then((result)=>{
@@ -23,25 +23,25 @@ export async function getProductsByID(id){
     return globalData;
 }
 
-//products delete
-export async function deleteProductsByID(id){
+//albums delete
+export async function deleteAlbumsByID(id){
     await axios.delete(API_BASE_URL+`/albums/${id}`);
 }
 
-//products post
-export async function postProduct(payload){
+//albums post
+export async function postAlbum(payload){
     let newCategory;
     newCategory =  await axios.post(API_BASE_URL+`/albums`,payload);
 
     return newCategory;
 }
 
-//products put
-export async function putProductByID(id,payload){
-    axios.put(API_BASE_URL+`/albums/${id}`,payload);
+//albums put
+export async function putAlbumByID(index,payload){
+   await axios.put(API_BASE_URL+`/albums/${index}`,payload);
 }
 
-//products patch
-export async function patchProductByID(id,payload){
-    axios.patch(API_BASE_URL+`/albums/${id}`,payload);
+//albums patch
+export async function patchAlbumByID(index,payload){
+    await axios.patch(API_BASE_URL+`/albums/${index}`,payload);
 }

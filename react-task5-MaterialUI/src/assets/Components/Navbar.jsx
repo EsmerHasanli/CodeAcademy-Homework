@@ -75,13 +75,13 @@ export default function Navbar() {
           </IconButton>
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Logo
+            Albums
           </Typography>
 
           {
             localStorage.getItem('user') ? 
             <>
-              <span>{JSON.parse(localStorage.getItem('user')).username}</span>
+              <span style={{marginRight: "10px"}}>Welcome, {JSON.parse(localStorage.getItem('user')).username}!</span>
               <Button style={{ color: "white" }} onClick={()=> {
                 localStorage.removeItem('user')
                 location.reload()
