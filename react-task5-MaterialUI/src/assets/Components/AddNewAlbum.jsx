@@ -36,8 +36,11 @@ export const AddNewAlbum = ({ setAlbums }) => {
   const handleSubmitChanges = async (e) => {
     e.preventDefault();
     
-    if(!newAlbum.name || !newAlbum.artistName || !newAlbum.year || !newAlbum.genre || !newAlbum.albumCover){
-        alert('empty inputs')
+    // Regex pattern for at least one capital letter
+    const capitalLetterRegex = /[A-Z]/;
+
+    if(!newAlbum.name || !newAlbum.artistName || !newAlbum.year || !newAlbum.genre || !newAlbum.albumCover ||  !capitalLetterRegex.test(newAlbum.name)){
+        alert('You can not add empty inputs and album name should strat with capital letter')
       }else{
 
         await postAlbum( newAlbum )
@@ -52,7 +55,7 @@ export const AddNewAlbum = ({ setAlbums }) => {
 
   return (
     <>
-    <Button onClick={handleOpen} style={{display:"block", margin:"10px auto"}}>Add Album</Button>
+    <Button onClick={handleOpen} style={{display:"block", margin:"10px auto"}} variant="outlined">Add Album</Button>
 
       <Modal
         open={open}

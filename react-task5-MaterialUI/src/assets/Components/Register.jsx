@@ -61,7 +61,8 @@ export default function Register() {
           password: passwordValue,
           username: usernameValue,
           createdAt: Date.now(),
-          isAdmin: isAdmin
+          isAdmin: isAdmin,
+          wishlistItems: []
         };
         await postUser(newUser);
         setOpen(false);

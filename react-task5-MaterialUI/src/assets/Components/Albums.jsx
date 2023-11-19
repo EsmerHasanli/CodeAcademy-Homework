@@ -50,7 +50,7 @@ const Albums = ({ albums, setAlbums }) => {
       const allAlbums = await getAllAlbums();
       setAlbums(allAlbums);
     } catch (error) {
-      console.error('Error fetching albums:', error);
+      console.error(error);
     }
   }
 
@@ -97,8 +97,9 @@ const Albums = ({ albums, setAlbums }) => {
       user && user.isAdmin==true &&      
       <AddNewAlbum setAlbums={setAlbums} />
     }
+      <div style={{margin:"20px 0", display:"flex", justifyContent:"center"}}>
+      {/* search input */}
       <TextField
-      style={{display:"flex", justifyContent:"center"}}
       onChange={(e)=>setSearch(e.target.value)}
       value = {search}
       type="text"
@@ -107,14 +108,15 @@ const Albums = ({ albums, setAlbums }) => {
       variant="outlined"
       autoComplete="on"
       />
-      <Button onClick={handleSortByYear}>sort by year</Button>
+      {/* sort by year */}
+      <Button onClick={handleSortByYear} style={{margin:"0px 20px"}} variant="outlined">sort by year</Button>
+      {/* sort by genre */}
       <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Sort by genre</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          
           value={sortType}
           label="Type"
           onChange={handleChange}
@@ -136,13 +138,14 @@ const Albums = ({ albums, setAlbums }) => {
 
         </Select>
       </FormControl>
-    </Box>
+      </Box>
+      </div>
     <Container>
       <Grid container spacing={2}>
         {albums && albums.map((album) => (
 
           <Grid item xl={4} lg={4} md={6} xs={9}  key={album.id}>
-              <Card style={{ marginTop: '20px' }} xs={{ maxWidth: 345 }}>
+              <Card style={{ marginBottom: '20px' }} xs={{ maxWidth: 345 }}>
                 <CardMedia
                   sx={{ height: 175 }}
                   image={album.albumCover}
