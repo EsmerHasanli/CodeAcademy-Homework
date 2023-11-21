@@ -1,0 +1,35 @@
+#footer{
+    padding: 80px 0;
+}
+
+
+.links{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.linkItems{
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(29,128,159);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: .3s;
+}
+
+.linkItems:hover{
+    background-color: rgb(21, 118, 148);
+}
+
+.copyright{
+    margin-top: 44px;
+    text-align: center;
+    color:rgb(105, 112, 122);
+    font-family: Metropolis, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 16px;
+    font-weight: 400;
+}
