@@ -129,7 +129,8 @@
        "password": "esmer123",
        "wishlistItems": [],
        "createdAt": 1637200000000,
-       "isAdmin": false
+       "isAdmin": false,
+       "comments": []
       },
       {
        "id": 2,
@@ -138,7 +139,8 @@
        "password": "nicat123",
        "wishlistItems": [],
        "createdAt": 16372864000200,
-       "isAdmin": true
+       "isAdmin": true,
+       "comments":[]
       }
      ]
 }
