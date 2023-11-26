@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Input, Row } from "antd";
-import { Box, Button, Pagination, Slider } from "@mui/material";
+import { Card, Col, Input, Row, Pagination} from "antd";
+import { Box, Button, Slider } from "@mui/material";
 
 function valuetext(value) {
   return `${value}°C`;
@@ -11,6 +11,8 @@ const Cards = () => {
   const [search, setSearch] = useState([]);
   const [value, setValue] = React.useState([20, 37]);
   const [searchedBeer, setSearchedBeer] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -27,10 +29,15 @@ const Cards = () => {
   };
 
   useEffect(() => {
-    fetch("https://api.punkapi.com/v2/beers")
+    fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${pageSize}`)
       .then((res) => res.json())
       .then((data) => setBeers(data));
-  }, []);
+  }, [currentPage, pageSize]);
+
+  const onShowSizeChange = (current, pageSize) => {
+    setCurrentPage(current)
+    setPageSize(pageSize)
+  };
 
   return (
     <>
@@ -110,7 +117,14 @@ const Cards = () => {
           ))}
         </Row>
       </div>
-    <Pagination/>
+     <div style={{display:'flex', alignItems:'center', justifyContent:'center', margin:'20px 0'}}>
+     <Pagination
+      showSizeChanger
+      onShowSizeChange={onShowSizeChange}
+      defaultCurrent={3}
+      total={500}
+    />
+     </div>
     </>
   );
 };
