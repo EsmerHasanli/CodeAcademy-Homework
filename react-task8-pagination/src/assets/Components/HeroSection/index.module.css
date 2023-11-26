@@ -1,0 +1,14 @@
+#hero{
+    margin: 0 !important;
+    padding: 0 !important;
+
+    height: 700px;
+    width: 100%;
+
+    background-image: url('https://www.graphis.com/media/uploads/cfe/entry/71ac892e-d136-45ef-93a8-ecea225db741/35d094604887455a4ec02770e1a.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
