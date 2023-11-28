@@ -1,0 +1,18 @@
+.addform{
+    padding: 34px 30px;
+    width: 31%;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.title{
+    margin: 0.83em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.link{
+    text-align: center;
+    color: black !important;
+    display: block;
+    margin-bottom: 10px;
+}
