@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useFormik } from "formik";
+import { useFormik, Formik } from "formik";
 import { postProduct } from "../../services/api/httpsrequests";
 import { Button, Checkbox, FormControlLabel, Link, TextField, OutlinedInput, InputLabel, MenuItem, FormControl, Select, } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -44,16 +44,17 @@ const AddForm = () => {
   };
 
   const { handleSubmit, handleBlur, handleChange: formikHandleChange, values, errors, touched, } = useFormik({
+    // devTools: true,
     initialValues: {
       categoryId: "",
       name: "",
-      unitPrice: 0,
-      unitsInStock: 0,
+      unitPrice: null,
+      unitsInStock: null,
       discontinued: false,
       quantityPerUnit: "",
     },
-    onSubmit: async (values, actions) => {
-      console.log(values);
+    onSubmit: async (values, actions) => {  //onSubmit iwlemir
+      console.log('test'); //console bowdu
       try {
         setIsSubmitting(true);
         await postProduct(values);
