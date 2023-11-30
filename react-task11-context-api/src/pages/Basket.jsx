@@ -10,14 +10,10 @@ const Basket = () => {
   useEffect(() => {
     const updatedBasket = basket.map((item) => ({
       ...item,
-      quantity: "quantity" in item ? item.quantity : 1,
+      quantity: item.quantity ? item.quantity : 1,
     }));
     setBasket(updatedBasket);
 
-    const saveToLocal = (newBasket) => {
-      localStorage.setItem("basket", JSON.stringify(newBasket));
-    };
-    saveToLocal(updatedBasket);
   }, [basket, setBasket]);
 
   const handleIncrease = (itemId) => {
@@ -40,6 +36,8 @@ const Basket = () => {
 
   const handleDelete = (itemId) => {
     setBasket((prevBasket) => prevBasket.filter((item) => item.id !== itemId));
+    const updatedBasket = basket.filter((item) => item.id !== itemId);
+    localStorage.setItem('basket', JSON.stringify(updatedBasket));
   };
 
   const columns = [
