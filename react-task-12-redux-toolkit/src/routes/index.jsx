@@ -2,7 +2,6 @@ import Home from "../pages/User/Home";
 import Login from "../pages/User/Login";
 import Register from "../pages/User/Register";
 import Basket from "../pages/User/Basket";
-import AddCategory from "../pages/Admin/AddCategory";
 import Dashboard from "../pages/Admin/Dashboard";
 import UserRoot from "../pages/User/UserRoot";
 import AdminRoot from "../pages/Admin/AdminRoot";
@@ -10,6 +9,7 @@ import AdminLogin from "../pages/Admin/Login";
 import Products from "../pages/User/Products";
 import DetailsPage from "../pages/User/Details"
 import UserPage from "../pages/User/userPage";
+import Addproduct from "../pages/Admin/AddCategory";
 
 export const ROUTES = [
   {
@@ -60,8 +60,8 @@ export const ROUTES = [
             element: <AdminLogin/>
         },
         {
-            path: 'add-category',
-            element: <AddCategory/>
+            path: 'add-product',
+            element: <Addproduct/>
         },
         {
             path: 'dashboard',

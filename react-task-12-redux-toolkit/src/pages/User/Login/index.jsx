@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { sign_in } from "../../../redux/slices/usersSlice";
 import { getAllUsers } from "../../../services/api/users";
 import Swal from "sweetalert2";
+import { UserContext } from "../../../services/context/UserContext";
 
 function Copyright(props) {
   return (
@@ -37,9 +38,10 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 const Login = () => {
+  const { setUser } = React.useContext(UserContext);
   const [users, setUsers] = React.useState([]);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     async function fetchData() {
@@ -62,18 +64,19 @@ const Login = () => {
       password: "",
     },
     onSubmit: async (values, actions) => {
-      if (
-        users.find(
-          (user) =>
-            user.email === values.email && user.password === values.password
-        )
-      ) {
+      const user = users.find(
+        (user) =>
+          user.email === values.email && user.password === values.password
+      );
+      if (user) {
+        setUser(user);
         dispatch(
           sign_in({
             password: values.password,
             email: values.email,
           })
         );
+        navigate("/products");
       } else {
         Swal.fire({
           title: "Make sure your email and password are correct!",
@@ -82,7 +85,6 @@ const Login = () => {
         });
       }
       actions.resetForm();
-      navigate('/products')
     },
   });
 

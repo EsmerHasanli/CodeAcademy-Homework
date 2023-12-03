@@ -4,10 +4,17 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container } from "@mui/material";
+import { useContext } from "react";
+import { UserContext } from "../../../services/context/UserContext";
+import { sign_out } from "../../../redux/slices/usersSlice";
+import { useDispatch } from "react-redux";
 
 const AdminNavbar = () => {
+  const { user, setUser } = useContext(UserContext);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <AppBar sx={{ background: "black" }} position="static">
       <Container>
@@ -25,15 +32,21 @@ const AdminNavbar = () => {
             Admin Side
           </Typography>
           <Button color="inherit">
-            <Link style={{ color: "white" }} to={"/admin"}>
+            <Link style={{ color: "white" }} to={"dashboard"}>
               Dashboard
             </Link>
           </Button>
           <Button color="inherit">
-            <Link style={{ color: "white" }} to={"/admin/add-category"}>
-              Add Category
+            <Link style={{ color: "white" }} to={"add-product"}>
+              Add Product
             </Link>
           </Button>
+          {user && <Button onClick={()=> {  
+            dispatch(sign_out())
+            setUser(null)
+            navigate("/admin")
+          }
+          } color="inherit">Logout</Button>}
         </Toolbar>
       </Container>
     </AppBar>
