@@ -28,8 +28,7 @@ const AdminLogin = () => {
         const fetchedUsers = await getAllUsers();
         setUsers(fetchedUsers);
       } catch (error) {
-        console.error("Error fetching users:", error);
-        // Handle error (e.g., show an error message to the user)
+        console.error(error);
       }
     }
     fetchData();
