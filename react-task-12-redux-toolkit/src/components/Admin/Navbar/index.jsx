@@ -41,6 +41,11 @@ const AdminNavbar = () => {
               Add Product
             </Link>
           </Button>
+          <Button color="inherit">
+            <Link style={{ color: "white" }} to={"users"}>
+              Users
+            </Link>
+          </Button>
           {user && <Button onClick={()=> {  
             dispatch(sign_out())
             setUser(null)

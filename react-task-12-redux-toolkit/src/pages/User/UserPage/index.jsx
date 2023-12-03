@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../../services/context/UserContext";
 import { Container, Card, CardHeader, Avatar } from "@mui/material";
-import { red } from "@mui/material/colors";
 import { getAllUsers } from "../../../services/api/users";
 
 const UserPage = () => {
@@ -31,9 +30,9 @@ const UserPage = () => {
       <Card sx={{ marginTop: 10, maxWidth: "400px" }}>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-              {user.avatar}
-            </Avatar>
+            
+              user.avatar
+
           }
           title={`Email: ${user.email}`}
           subheader={`Password: ${user.password}`}

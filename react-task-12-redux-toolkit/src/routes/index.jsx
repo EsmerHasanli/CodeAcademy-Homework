@@ -10,6 +10,7 @@ import Products from "../pages/User/Products";
 import DetailsPage from "../pages/User/Details"
 import UserPage from "../pages/User/userPage";
 import Addproduct from "../pages/Admin/AddCategory";
+import UsersPage from "../pages/Admin/UsersPage";
 
 export const ROUTES = [
   {
@@ -66,7 +67,11 @@ export const ROUTES = [
         {
             path: 'dashboard',
             element: <Dashboard/>
-        }
+        },
+        {
+          path: 'users',
+          element: <UsersPage/>
+      }
     ]
   },
 ];
