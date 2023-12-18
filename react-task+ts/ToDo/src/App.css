@@ -1,0 +1,11 @@
+/* body{
+    background: rgb(153,34,195);
+    background: linear-gradient(0deg, rgba(153,34,195,1) 0%, rgba(45,196,253,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+body{
+    background: rgb(153,34,195);
+    color:white;
+}
