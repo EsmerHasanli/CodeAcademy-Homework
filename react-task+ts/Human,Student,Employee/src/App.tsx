@@ -1,14 +1,14 @@
 import React from "react";
 
 //enums
-enum Position {
-  dev,
-  designer,
-  marketing,
-  smm,
-  hr,
-  ceo,
-}
+// enum Position {
+//   dev,
+//   designer,
+//   marketing,
+//   smm,
+//   hr,
+//   ceo,
+// }
 
 //interfaces
 interface IHuman {
@@ -149,7 +149,7 @@ class Employee extends Human implements IEmployee<string[]> {
 
 function App() {
   const [type, setType] = React.useState("");
-  const [position, setPosition] = React.useState("");
+  const [position] = React.useState("");
   const [data, setData] = React.useState<any>({ fname: "", surname: "", age: "", salary: "", skills: "", position: "", groupName: "", gpa: "", hobbies: "" });
   const [dataList, setDataList] = React.useState<string[]>([]);
 
