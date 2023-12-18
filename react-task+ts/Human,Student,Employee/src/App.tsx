@@ -1,4 +1,3 @@
-import { PostAdd } from "@mui/icons-material";
 import React from "react";
 
 //enums
@@ -22,7 +21,7 @@ interface IHuman {
 interface IEmployee<T> {
   salary: number;
   skills: T;
-  position: "";
+  position: string;
 }
 
 interface IStudent<Type> {
@@ -84,7 +83,8 @@ class Student extends Human implements IStudent<string[]> {
     GPA: number,
     groupName: string,
     hobbies: string[]
-  ) {
+  ) 
+  {
     super(fname, surname, age);
     if (GPA < 0 || GPA > 100) {
       this._GPA = 0;
@@ -115,7 +115,7 @@ class Student extends Human implements IStudent<string[]> {
     }
   }
   //method override
-  getInfo(): string {
+  public getInfo(): string {
     return `${this.fullName} studies in ${this.groupName} & has GPA: ${this._GPA}`;
   }
 }
@@ -123,7 +123,7 @@ class Student extends Human implements IStudent<string[]> {
 class Employee extends Human implements IEmployee<string[]> {
   salary: number;
   skills: string[];
-  position: '';
+  position: string;
 
   constructor(
     fname: string,
@@ -131,27 +131,27 @@ class Employee extends Human implements IEmployee<string[]> {
     age: number,
     salary: number,
     skills: string[],
-    position: ""
+    position: string
   ) {
     super(fname, surname, age);
     this.salary = salary;
     this.skills = skills;
-    this.position = "";
+    this.position = position;
   }
 
   //method override
   getInfo(): string {
     return `${this.fullName} is ${this.position} & get paid: ${
       this.salary
-    }$`;
+    }`;
   }
 }
 
 function App() {
   const [type, setType] = React.useState("");
   const [position, setPosition] = React.useState("");
-  const [data, setData] = React.useState({ fname: "", surname: "", age: "", salary: "", skills: "", position: "", groupName: "", gpa: "", hobbies: "" });
-  const [dataList, setDataList] = React.useState();
+  const [data, setData] = React.useState<any>({ fname: "", surname: "", age: "", salary: "", skills: "", position: "", groupName: "", gpa: "", hobbies: "" });
+  const [dataList, setDataList] = React.useState<string[]>([]);
 
   const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setType(event.target.value);
@@ -165,7 +165,9 @@ function App() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if(type == '0'){
+      console.log(data)
       const hobbiesArray: string[] = data.hobbies.split(',');
+      console.log(hobbiesArray)
       const student = new Student(
         data.fname,
         data.surname,
@@ -175,10 +177,11 @@ function App() {
         hobbiesArray,
       );
       setDataList([...dataList, student.getInfo()]);
-  console.log(dataList);
 
     } else{
       const skillsArray: string[] = data.skills.split(',');
+      console.log(skillsArray)
+      console.log(data)
       const employee = new Employee(
         data.fname,
         data.surname,
@@ -187,7 +190,7 @@ function App() {
         skillsArray,
         data.position,
       );
-      setData([...dataList, employee.getInfo()]);
+      setDataList([...dataList, employee.getInfo()]);
     }
     resetForm();
   }
@@ -195,9 +198,9 @@ function App() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input onChange={(e) => setData({ ...data, fname: e.target.value })} type="text" placeholder="Name" />
-        <input onChange={(e) => setData({ ...data, surname: e.target.value })} type="text" placeholder="Surname" />
-        <input onChange={(e) => setData({ ...data, age: e.target.value })} type="number" placeholder="Age" />
+        <input value={data.fname} onChange={(e) => setData({ ...data, fname: e.target.value })} type="text" placeholder="Name" />
+        <input value={data.surname} onChange={(e) => setData({ ...data, surname: e.target.value })} type="text" placeholder="Surname" />
+        <input value={data.age} onChange={(e) => setData({ ...data, age: e.target.value })} type="number" placeholder="Age" />
         <select value={type} onChange={handleTypeChange}>
           <option value="default">Human</option>
           <option value="0">Student</option>
@@ -206,9 +209,9 @@ function App() {
         <br />
         {type && type == "0" && (
           <>
-            <input type="text" placeholder="Group Name" />
-            <input type="number" placeholder="GPA" />
-            <input type="text" placeholder="Hobbies" />
+            <input value={data.groupName} onChange={(e) => setData({ ...data, groupName: e.target.value })} type="text" placeholder="Group Name" />
+            <input value={data.gpa} onChange={(e) => setData({ ...data, gpa: e.target.value })} type="number" placeholder="GPA" />
+            <input  onChange={(e) => setData({ ...data, hobbies: e.target.value})} type="text" placeholder="Hobbies" />
           </>
         )}
         {type && type == "1" && (
@@ -242,7 +245,7 @@ function App() {
       <br />
       <hr />
       <ul>
-        {dataList && dataList.map((obj, idx) => <li key={idx}>{obj}</li>)} 
+        {dataList && dataList.map((obj:string, idx:number) => <li key={idx}>{obj}</li>)} 
       </ul>
     </>
   );
