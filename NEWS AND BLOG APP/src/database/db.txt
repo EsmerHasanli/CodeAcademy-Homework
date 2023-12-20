@@ -1,0 +1,48 @@
+{
+    "users":[
+        {
+            "id": "",
+            "username":"",
+            "fullName":"",
+            "profileImg":"",
+            "email":"",
+            "password": "",
+            "isSdmin": false
+        }
+    ],
+    "publishers":[
+        {
+            "id": "",
+            "username":"",
+            "password": "",
+            "email":"",
+            "backgroundImg":"",
+            "profileImg":"",
+            "name":"", 
+            "description":"", 
+            "joinedDate":1234567890
+        }
+    ],
+    "tags":[
+        {
+            "id": "",
+            "name":""
+        }
+    ],
+    "news":[
+        {
+            "id": "",
+            "name":""
+        }
+    ],
+    "subscriptions":[
+        {
+            "id": "",
+            "title":"",
+            "createdAt":"",
+            "linkUrl":"",
+            "thumbnailImg":"",
+            "newsBody":""
+        }
+    ]
+}
