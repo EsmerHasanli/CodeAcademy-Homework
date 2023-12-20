@@ -11,10 +11,14 @@ export const ROUTES = [
     children: [
       {
         index: true,
+        element: <News />,
+      },
+      {
+        path: "signin",
         element: <Login />,
       },
       {
-        path: "register",
+        path: "signup",
         element: <Register />,
       },
       {

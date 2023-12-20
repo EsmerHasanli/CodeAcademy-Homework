@@ -1,0 +1,65 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 19px 48px;
+    border-bottom:1px solid rgb(200, 200, 200);
+}
+
+.leftbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(233, 6, 6);
+    font-family: "Roboto Condensed", "Arial Narrow", arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.heading{
+    color:rgb(233, 6, 6);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "PT Serif", georgia, times, serif;
+    font-weight: 500;
+}
+
+.rightbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.a{
+    color:rgb(233, 6, 6);
+    margin-right: 30px;
+    font-family: "Roboto Condensed", "Arial Narrow", arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.b{
+    font-family: "Roboto Condensed", "Arial Narrow", arial, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: white;
+    background-color:rgb(233, 6, 6);
+    border-radius: 3px;
+    border:none;
+    padding: 8px 24px;
+}
+
+.newsletter{
+    color: rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+    font-family: "Roboto Condensed", "Arial Narrow", arial, sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.newsletter:hover{
+    color:rgb(233, 6, 6);
+}
